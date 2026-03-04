@@ -1,42 +1,93 @@
-#root {
-  max-width: 1280px;
+/* Tema di default: light */
+:root {
+  --bg-main: #ffffff;
+  --bg-section: #f3f4f6;
+  --bg-section-alt: #e5e7eb;
+  --accent: #e32828;
+  --accent-soft: #ff4b4b;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-soft: #d1d5db;
+  --max-width: 1200px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* Tema dark: override delle variabili quando html ha data-theme="dark" */
+:root[data-theme="dark"] {
+  --bg-main: #05060a;
+  --bg-section: #0b0d14;
+  --bg-section-alt: #111420;
+  --accent: #e32828;
+  --accent-soft: #ff4b4b;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --border-soft: #1f2933;
+  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main centrato, con spazio per l'header fisso */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 0 60px;
+}
+
+/* Contenitore base per tutte le sezioni “pagina” */
+.page-section {
+  width: 100%;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 24px 60px;
+}
+
+/* Footer base */
+.footer {
+  border-top: 1px solid var(--border-soft);
+  background: var(--bg-section);
+  padding: 18px 20px 24px;
   text-align: center;
+  font-size: 0.86rem;
+  color: var(--text-muted);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive generale */
+@media (max-width: 1024px) {
+  .main {
+    padding: 76px 0 50px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .page-section {
+    padding: 0 16px 50px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.8rem;
+    padding: 16px 14px 20px;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

@@ -23,4 +23,3 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);      // Firestore
 export const rtdb = getDatabase(app);     // Realtime Database
 export const storage = getStorage(app);   // Storage
-const analytics = getAnalytics(app);

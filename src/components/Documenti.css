@@ -1,0 +1,41 @@
+/* src/components/Documenti.css */
+
+.documenti h2 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.documenti p {
+  color: var(--text-muted);
+}
+
+.documenti ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.documenti li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-section-alt);
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.documenti li a::after {
+  content: "↓ PDF";
+  font-size: 0.8rem;
+  color: var(--accent-soft);
+}
+
+.documenti li a:hover {
+  border-color: var(--accent);
+}

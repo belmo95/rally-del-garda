@@ -1,0 +1,46 @@
+/* src/components/Programma.css */
+
+.programma h2 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.programma p {
+  color: var(--text-muted);
+}
+
+.programma-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  background: var(--bg-section);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+}
+
+.programma-table th,
+.programma-table td {
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+.programma-table thead {
+  background: var(--bg-section-alt);
+}
+
+.programma-table tbody tr:nth-child(odd) {
+  background: var(--bg-section);
+}
+
+.programma-table tbody tr:nth-child(even) {
+  background: var(--bg-section-alt);
+}
+
+@media (max-width: 768px) {
+  .programma-table th,
+  .programma-table td {
+    padding: 10px 10px;
+    font-size: 0.9rem;
+  }
+}

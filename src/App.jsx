@@ -1,43 +1,53 @@
 // src/App.jsx
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { TestFirestore } from "./TestFirestore"
+import { useState } from "react";
+import "./App.css";
+
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { Programma } from "./components/Programma";
+import { Documenti } from "./components/Documenti";
+import { Albo_di_gara } from "./components/Albo_di_gara";
+import { Media } from "./components/Media";
+import { News } from "./components/News";
+import { Footer } from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState("home");
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case "programma":
+        return <Programma />;
+      case "documenti":
+        return <Documenti />;
+      case "albo":
+        return <Albo_di_gara />;
+      case "media":
+        return <Media />;
+      case "news":
+        return <News />;
+      case "contatti":
+        return <Footer />;
+      case "home":
+      default:
+        return <Hero />;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+    <div className="app">
+      <Header
+        onChangeSection={setActiveSection}
+        activeSection={activeSection}
+      />
 
-      <h1>Vite + React</h1>
+      <main className="main">
+        {renderSection()}
+      </main>
 
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-
-      {/* Bottone che scrive su Firestore */}
-      <TestFirestore />
-    </>
-  )
+      {activeSection !== "contatti" && <Footer />}
+    </div>
+  );
 }
 
-export default App
+export default App;
