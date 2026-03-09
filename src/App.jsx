@@ -30,7 +30,7 @@ function App() {
         return <Footer />;
       case "home":
       default:
-        return <Hero />;
+        return <Hero onChangeSection={setActiveSection} />;
     }
   };
 
