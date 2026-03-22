@@ -55,13 +55,14 @@
   }
 }
 
-/* TITOLONE IN ALTO */
+/* TITOLONE IN ALTO - centrato */
 .hero-title-wrapper {
   position: relative;
   z-index: 2;
   text-align: center;
   width: 100%;
   max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -90,7 +91,7 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* BLOCCO SOTTO: immagine + contenuto - limitato a max-width */
+/* BLOCCO SOTTO: immagine + contenuto - limitato e centrato */
 .hero-body {
   position: relative;
   z-index: 2;
@@ -100,6 +101,7 @@
   gap: 32px;
   width: 100%;
   max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
