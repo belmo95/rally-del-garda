@@ -9,11 +9,9 @@
   --max-width: 1100px;
 }
 
-/* Layout generale hero: verticale */
+/* Layout generale hero: background full-width */
 .hero {
   width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
   padding: 60px 24px 100px;
   display: flex;
   flex-direction: column;
@@ -35,7 +33,7 @@
   color: #fff;
 }
 
-/* Overlay dinamico opzionale (se la usi in JSX) */
+/* Overlay dinamico opzionale */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -63,6 +61,7 @@
   z-index: 2;
   text-align: center;
   width: 100%;
+  max-width: var(--max-width);
 }
 
 .hero-title {
@@ -91,7 +90,7 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* BLOCCO SOTTO: immagine + contenuto */
+/* BLOCCO SOTTO: immagine + contenuto - limitato a max-width */
 .hero-body {
   position: relative;
   z-index: 2;
@@ -100,6 +99,7 @@
   align-items: center;
   gap: 32px;
   width: 100%;
+  max-width: var(--max-width);
 }
 
 @media (min-width: 768px) {
