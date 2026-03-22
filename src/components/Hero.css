@@ -17,6 +17,7 @@
   padding: 60px 24px 100px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
   position: relative;
   background-image:
@@ -26,7 +27,7 @@
       rgba(15, 23, 42, 0.9) 50%,
       rgba(0, 0, 0, 0.95) 100%
     ),
-    url("./rally-big.jpg"); /* metti la tua immagine di sfondo */
+    url("./rally-big.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -61,6 +62,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
+  width: 100%;
 }
 
 .hero-title {
@@ -95,12 +97,15 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 32px;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .hero-body {
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap: 40px;
   }
@@ -115,7 +120,7 @@
     0 25px 50px rgba(0, 0, 0, 0.6),
     0 0 0 1px rgba(220, 38, 38, 0.3),
     inset 0 2px 0 rgba(255, 255, 255, 0.1);
-  transform: skew(-2deg) translateX(-10px);
+  transform: skew(-2deg) translateX(0);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   max-width: 520px;
 }
@@ -140,7 +145,6 @@
 }
 
 .hero-content h1 {
-  /* se vuoi usare solo il titolo in alto, puoi anche non usarlo qui */
   display: none;
 }
 
@@ -277,22 +281,18 @@
     padding: 40px 16px 60px;
     gap: 28px;
   }
-
   .hero-body {
     flex-direction: column;
     align-items: center;
   }
-
   .hero-image {
     max-height: 280px;
     transform: none;
   }
-
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
   }
-
   .btn-primary,
   .btn-secondary {
     width: 100%;
