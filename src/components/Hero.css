@@ -12,11 +12,12 @@
 /* Layout generale hero: background full-width */
 .hero {
   width: 100%;
-  padding: 60px 24px 100px;
+  min-height: 100vh;
+  padding: 30px 24px 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
   position: relative;
   background-image:
     linear-gradient(
@@ -55,7 +56,121 @@
   }
 }
 
-/* TITOLONE IN ALTO - centrato */
+/* Contenitore interno */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+/* === BLOCCO ALTO: stemma + testo sotto === */
+
+.hero-logo-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+
+.hero-logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo-image {
+  max-width: 1000px;
+  width: 68vw;
+  height: auto;
+  margin-bottom: 0;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.55));
+}
+
+/* Testo sotto lo stemma */
+.hero-logo-text {
+  width: 100%;
+  max-width: 1000px;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 1.6rem;
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
+}
+
+.hero-logo-text p {
+  margin: 0;
+}
+
+/* Spazio tra blocco alto e parte con la macchina */
+.hero-spacer {
+  height: 20px;
+}
+
+/* === BLOCCO CENTRALE: testo sx - immagine - testo dx === */
+
+.hero-middle-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.hero-side-text {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
+}
+
+.hero-side-text p {
+  margin: 0;
+}
+
+/* testo sinistro / destro, se ti serve styling diverso */
+.hero-left-text { }
+.hero-right-text { }
+
+/* La parte centrale con l'immagine dell'auto */
+.hero-center-image {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-center-image-img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(220, 38, 38, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.1);
+  transform: skew(-2deg);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-center-image-img:hover {
+  transform: skew(-2deg) scale(1.03);
+  box-shadow: 0 35px 70px rgba(220, 38, 38, 0.5);
+}
+
+/* Titolo opzionale */
 .hero-title-wrapper {
   position: relative;
   z-index: 2;
@@ -91,7 +206,7 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* BLOCCO SOTTO: immagine + contenuto - limitato e centrato */
+/* Vecchio blocco, lasciato compatibile */
 .hero-body {
   position: relative;
   z-index: 2;
@@ -113,7 +228,6 @@
   }
 }
 
-/* Immagine foreground con stile sportivo */
 .hero-image {
   position: relative;
   border-radius: 12px;
@@ -141,7 +255,6 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* Testo a fianco / sotto l'immagine */
 .hero-content {
   max-width: 520px;
 }
@@ -202,6 +315,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 
 .btn-primary,
@@ -273,30 +387,84 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .hero {
-    padding: 50px 20px 80px;
+    padding: 26px 20px 60px;
     background-attachment: scroll;
+  }
+
+  .hero-logo-image {
+    max-width: 700px;
+    width: 88vw;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 40px 16px 60px;
-    gap: 28px;
+    min-height: auto;
+    padding: 24px 16px 50px;
+    gap: 20px;
   }
+
+  .hero-logo-image {
+    max-width: 420px;
+    width: 95%;
+  }
+
+  .hero-logo-text {
+    font-size: 0.96rem;
+    line-height: 1.4;
+  }
+
   .hero-body {
     flex-direction: column;
     align-items: center;
   }
+
   .hero-image {
     max-height: 280px;
     transform: none;
   }
+
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
+    max-width: 340px;
   }
+
   .btn-primary,
   .btn-secondary {
     width: 100%;
+  }
+
+  /* Qui controlliamo DISTANZA sopra/sotto la macchina */
+  .hero-middle-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px; /* meno spazio generale */
+  }
+
+  /* testo che va sopra l'immagine */
+  .hero-left-text {
+    margin-bottom: 4px; /* avvicina il testo all'immagine sotto */
+  }
+
+  /* testo sotto l'immagine */
+  .hero-right-text {
+    margin-top: 4px;
+  }
+
+  .hero-center-image {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-center-image-img {
+    max-width: 340px;
+    margin-top: 0;
+  }
+
+  .hero-spacer {
+    height: 18px;
   }
 }

@@ -1,47 +1,78 @@
 // src/components/Hero.jsx
 import "./Hero.css";
-import heroImage from "../assets/Rally Del Garda targa.png";
+import logoRally from "../assets/Rally Del Garda targa.png";
+import rallyCarImage from "../assets/rally-car.jpg";
 
 export function Hero({ onChangeSection }) {
   return (
-    <section className="hero hero-vertical">
-      {/* Titolo grande in alto */}
-      <div className="hero-title-wrapper">
-        <h1 className="hero-title">
-          RALLY DEL GARDA 2026
-        </h1>
-        <p className="hero-subtitle">
-          Adrenalina, velocità e passione sulle strade del Lago di Garda.
-        </p>
-      </div>
+    <section className="hero">
+      {/* Overlay dinamico (rimane come nel tuo stile) */}
+      <div className="hero-overlay" />
 
-      {/* Blocco immagine + contenuto sotto */}
-      <div className="hero-body">
-        <div className="hero-image">
-          <img src={heroImage} alt="Rally del Garda" />
+      <div className="hero-inner">
+        {/* BLOCCO ALTO: stemma + testo sotto */}
+        <div className="hero-logo-block">
+          <div className="hero-logo-wrapper">
+            <img
+              src={logoRally}
+              alt="Stemma Rally del Garda"
+              className="hero-logo-image"
+            />
+          </div>
+
+          <div className="hero-logo-text">
+            <p>
+              PARTENZA DA TOSCOLANO MADERNO SUL LUNGOLAGO VICINO HOTEL MILANO
+            </p>
+          </div>
         </div>
 
-        <div className="hero-content">
-          <span className="hero-badge">
-            <span /> Edizione 2026 – Rally del Garda
-          </span>
-          <p>
-            Un weekend di adrenalina pura sulle strade che abbracciano il Lago di Garda, tra tornanti mozzafiato, sterrati veloci e panorami che non dimenticherai.
-          </p>
-          <div className="hero-actions">
-            <button
-              className="btn-primary"
-              onClick={() => onChangeSection("albo")}
-            >
-              Iscriviti ora
-            </button>
-            <button
-              className="btn-secondary"
-              onClick={() => onChangeSection("documenti")}
-            >
-              Regolamento
-            </button>
+        {/* SPACER circa 2 cm */}
+        <div className="hero-spacer" />
+
+        {/* BLOCCO CENTRALE: testo sx - immagine - testo dx */}
+        <div className="hero-middle-row">
+          <div className="hero-side-text hero-left-text">
+            <p>
+              6 PROVE SPECIALI
+              SABATO SERA  PRIMA PROVA
+              E RIORDINO NOTTURNO A 
+              SALO' IN PIAZZA DEL MERCATO
+            </p>
           </div>
+
+          <div className="hero-center-image">
+            <img
+              src={rallyCarImage}
+              alt="Auto da rally"
+              className="hero-center-image-img"
+            />
+          </div>
+
+          <div className="hero-side-text hero-right-text">
+            <p>
+             DOMENICA MATTINA PARCO ASSISTENZA A TOSCOLANO
+             E AL TERMINE ARRIVO A MADERNO SUL LUNGOLAGO
+             E PREMIAZIONI SUL PALCO
+            </p>
+          </div>
+        </div>
+
+        {/* BOTTONI AZIONE – manteniamo il tuo stile */}
+        <div className="hero-actions">
+          <button
+            className="btn-primary"
+            onClick={() => onChangeSection("albo")}
+          >
+            <span className="btn-glow" />
+            Iscriviti ora
+          </button>
+          <button
+            className="btn-secondary"
+            onClick={() => onChangeSection("documenti")}
+          >
+            Regolamento
+          </button>
         </div>
       </div>
     </section>

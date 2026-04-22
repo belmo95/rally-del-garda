@@ -42,7 +42,13 @@ function App() {
       />
 
       <main className="main">
-        {renderSection()}
+        {activeSection === "home" ? (
+          <section className="hero-section">
+            <Hero onChangeSection={setActiveSection} />
+          </section>
+        ) : (
+          <div className="page-section">{renderSection()}</div>
+        )}
       </main>
 
       {activeSection !== "contatti" && <Footer />}
