@@ -10,6 +10,9 @@ import { Albo_di_gara } from "./components/Albo_di_gara";
 import { Media } from "./components/Media";
 import { News } from "./components/News";
 import { Footer } from "./components/Footer";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
+import { CookiePolicy } from "./components/CookiePolicy";
+import { TerminiCondizioni } from "./components/TerminiCondizioni";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -18,6 +21,12 @@ function App() {
     switch (activeSection) {
       case "programma":
         return <Programma />;
+      case "privacy":
+        return <PrivacyPolicy />;
+      case "cookie":
+        return <CookiePolicy />;
+      case "termini":
+        return <TerminiCondizioni />;
       case "documenti":
         return <Documenti />;
       case "albo":
@@ -27,7 +36,7 @@ function App() {
       case "news":
         return <News />;
       case "contatti":
-        return <Footer />;
+        return <Footer onChangeSection={setActiveSection} />;
       case "home":
       default:
         return <Hero onChangeSection={setActiveSection} />;
@@ -51,7 +60,9 @@ function App() {
         )}
       </main>
 
-      {activeSection !== "contatti" && <Footer />}
+      {activeSection !== "contatti" && (
+        <Footer onChangeSection={setActiveSection} />
+      )}
     </div>
   );
 }

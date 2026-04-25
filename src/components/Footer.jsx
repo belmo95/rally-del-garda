@@ -1,13 +1,25 @@
 // src/components/Footer.jsx
 import "./Footer.css";
 
-export function Footer() {
+export function Footer({ onChangeSection }) {
   return (
     <footer className="footer">
-      <p>Rally del Garda - Organizzato da Northon Racing</p>
-      <p>
-        Email: info@rallydelgarda.it - Tel: +39 000 0000000
-      </p>
+      <div className="footer-content">
+        <p>Rally del Garda - Organizzato da Northon Racing</p>
+        <p>Email: info@rallydelgarda.it - Tel: 0039 320 2766400</p>
+
+        <div className="footer-legal-links">
+          <button type="button" onClick={() => onChangeSection("privacy")}>
+            Privacy Policy
+          </button>
+          <button type="button" onClick={() => onChangeSection("cookie")}>
+            Cookie Policy
+          </button>
+          <button type="button" onClick={() => onChangeSection("termini")}>
+            Termini e Condizioni
+          </button>
+        </div>
+      </div>
     </footer>
   );
 }
