@@ -33,13 +33,13 @@ export function Hero({ onChangeSection }) {
         {/* BLOCCO CENTRALE: testo sx - immagine - testo dx */}
         <div className="hero-middle-row">
           <div className="hero-side-text hero-left-text">
-            <p>
-              6 PROVE SPECIALI
-              SABATO SERA  PRIMA PROVA
-              E RIORDINO NOTTURNO A 
-              SALO' IN PIAZZA DEL MERCATO
-            </p>
-          </div>
+  <p>
+    7 PROVE SPECIALI: <br />
+    1 SABATO SERA E 6 DOMENICA <br />
+    PRIMA PROVA E RIORDINO NOTTURNO <br />
+    A SALO' IN PIAZZA DEL MERCATO
+  </p>
+</div>
 
           <div className="hero-center-image">
             <img
