@@ -1,4 +1,4 @@
-/* src/components/Hero.css - Versione Rally Sportiva */
+/* src/components/Hero.css */
 
 /* Palette */
 :root {
@@ -6,10 +6,9 @@
   --rally-red-glow: #ef4444;
   --rally-black: #0f0f23;
   --speed-yellow: #facc15;
-  --max-width: 1100px;
 }
 
-/* Layout generale hero: background full-width */
+/* Hero */
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -19,6 +18,8 @@
   align-items: center;
   gap: 24px;
   position: relative;
+  overflow: hidden;
+  color: #fff;
   background-image:
     linear-gradient(
       135deg,
@@ -30,33 +31,33 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  overflow: hidden;
-  color: #fff;
 }
 
-/* Overlay dinamico opzionale */
+/* Overlay dinamico */
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     radial-gradient(circle at 20% 80%, rgba(250, 204, 21, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.4) 0%, transparent 50%);
-  z-index: 1;
   animation: speedFlares 6s ease-in-out infinite;
 }
 
 @keyframes speedFlares {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.1);
   }
 }
 
-/* Contenitore interno */
+/* Contenuto interno */
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -69,8 +70,7 @@
   gap: 22px;
 }
 
-/* === BLOCCO ALTO: stemma + testo sotto === */
-
+/* Blocco logo */
 .hero-logo-block {
   width: 100%;
   display: flex;
@@ -87,21 +87,20 @@
 }
 
 .hero-logo-image {
-  max-width: 1000px;
   width: 68vw;
+  max-width: 1000px;
   height: auto;
   margin-bottom: 0;
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.55));
 }
 
-/* Testo sotto lo stemma */
 .hero-logo-text {
   width: 100%;
   max-width: 1000px;
+  margin-top: 0;
+  padding-top: 10px;
   color: rgba(255, 255, 255, 0.96);
   font-size: 1.6rem;
-  margin-top: 0;
-  padding-top: 0;
   line-height: 2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
 }
@@ -110,20 +109,19 @@
   margin: 0;
 }
 
-/* Spazio tra blocco alto e parte con la macchina */
+/* Spacer */
 .hero-spacer {
   height: 20px;
 }
 
-/* === BLOCCO CENTRALE: testo sx - immagine - testo dx === */
-
+/* Riga centrale */
 .hero-middle-row {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 32px;
-  width: 100%;
-  flex-wrap: wrap;
 }
 
 .hero-side-text {
@@ -140,21 +138,22 @@
   margin: 0;
 }
 
-/* testo sinistro / destro, se ti serve styling diverso */
-.hero-left-text { }
-.hero-right-text { }
+.hero-left-text {
+}
 
-/* La parte centrale con l'immagine dell'auto */
+.hero-right-text {
+}
+
 .hero-center-image {
   flex: 0 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-center-image-img {
-  max-width: 420px;
   width: 100%;
+  max-width: 420px;
   height: auto;
   border-radius: 16px;
   box-shadow:
@@ -170,175 +169,35 @@
   box-shadow: 0 35px 70px rgba(220, 38, 38, 0.5);
 }
 
-/* Titolo opzionale */
-.hero-title-wrapper {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.hero-title {
-  font-size: clamp(3.2rem, 6vw, 4.6rem);
-  line-height: 1.05;
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    var(--speed-yellow) 40%,
-    var(--rally-red) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 40px rgba(250, 204, 21, 0.7);
-  margin-bottom: 10px;
-}
-
-.hero-subtitle {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* Vecchio blocco, lasciato compatibile */
-.hero-body {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .hero-body {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-  }
-}
-
-.hero-image {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(220, 38, 38, 0.3),
-    inset 0 2px 0 rgba(255, 255, 255, 0.1);
-  transform: skew(-2deg) translateX(0);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  max-width: 520px;
-}
-
-.hero-image:hover {
-  transform: skew(-2deg) translateX(0) scale(1.02);
-  box-shadow: 0 35px 70px rgba(220, 38, 38, 0.5);
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  display: block;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-}
-
-.hero-content {
-  max-width: 520px;
-}
-
-.hero-content h1 {
-  display: none;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  border-radius: 50px;
-  background: linear-gradient(
-    135deg,
-    rgba(220, 38, 38, 0.9),
-    rgba(15, 23, 42, 0.95)
-  );
-  border: 1px solid rgba(250, 204, 21, 0.6);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #fff;
-  margin-bottom: 16px;
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
-  animation: badgePulse 2s ease-in-out infinite;
-}
-
-.hero-badge span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--speed-yellow);
-  box-shadow:
-    0 0 20px var(--speed-yellow),
-    inset 0 2px 4px rgba(255, 255, 255, 0.3);
-  margin-right: 10px;
-}
-
-@keyframes badgePulse {
-  0%, 100% {
-    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
-  }
-  50% {
-    box-shadow: 0 8px 35px rgba(220, 38, 38, 0.7);
-  }
-}
-
-.hero-content p {
-  color: rgba(255, 255, 255, 0.96);
-  font-size: 1.05rem;
-  margin-bottom: 28px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.55);
-}
-
-/* Bottoni */
+/* Azioni */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
   justify-content: center;
+  gap: 16px;
 }
 
 .btn-primary,
 .btn-secondary {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
+  border: none;
   border-radius: 50px;
+  cursor: pointer;
   font-size: 0.95rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border: none;
-  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  position: relative;
-  overflow: hidden;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--rally-red), #b91c1c);
   color: #fff;
+  background: linear-gradient(135deg, var(--rally-red), #b91c1c);
   box-shadow:
     0 20px 40px rgba(220, 38, 38, 0.6),
     0 0 0 1px rgba(255, 255, 255, 0.2) inset;
@@ -371,20 +230,20 @@
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(250, 204, 21, 0.8);
   backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
+  transform: translateY(-2px);
   background: rgba(250, 204, 21, 0.2);
   border-color: var(--speed-yellow);
-  transform: translateY(-2px);
   box-shadow: 0 15px 30px rgba(250, 204, 21, 0.4);
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 1024px) {
   .hero {
     padding: 26px 20px 60px;
@@ -392,11 +251,12 @@
   }
 
   .hero-logo-image {
-    max-width: 700px;
     width: 88vw;
+    max-width: 700px;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
@@ -405,8 +265,8 @@
   }
 
   .hero-logo-image {
-    max-width: 420px;
     width: 95%;
+    max-width: 420px;
   }
 
   .hero-logo-text {
@@ -414,42 +274,17 @@
     line-height: 1.4;
   }
 
-  .hero-body {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-image {
-    max-height: 280px;
-    transform: none;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 340px;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-  }
-
-  /* Qui controlliamo DISTANZA sopra/sotto la macchina */
   .hero-middle-row {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 24px; /* meno spazio generale */
+    gap: 24px;
   }
 
-  /* testo che va sopra l'immagine */
   .hero-left-text {
-    margin-bottom: 4px; /* avvicina il testo all'immagine sotto */
+    margin-bottom: 4px;
   }
 
-  /* testo sotto l'immagine */
   .hero-right-text {
     margin-top: 4px;
   }
@@ -462,6 +297,18 @@
   .hero-center-image-img {
     max-width: 340px;
     margin-top: 0;
+  }
+
+  .hero-actions {
+    width: 100%;
+    max-width: 340px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
   }
 
   .hero-spacer {
