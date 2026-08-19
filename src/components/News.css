@@ -1,40 +1,270 @@
 /* src/components/News.css */
 
-.news h2 {
-  font-size: 1.9rem;
+.news {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+.news-header {
+  padding: 24px 32px 16px;
+}
+
+.news-label {
+  display: inline-block;
   margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.news h2 {
+  margin: 0;
+  color: var(--text-primary, inherit);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.1;
 }
 
 .news p {
+  margin: 10px 0 0;
   color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
+/* ---------- Sezione mappa ---------- */
+
+.news-mappa-section {
+  padding: 0 32px 24px;
+}
+
+.news-mappa-title {
+  margin: 0 0 6px;
+  color: var(--text-primary, inherit);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.news-mappa-desc {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Visualizzatore PDF */
+
+.news-mappa-viewer {
+  width: 100%;
+  height: calc(100vh - 180px);
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--bg-section);
+  box-sizing: border-box;
+}
+
+.news-mappa-viewer object {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.news-mappa-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  margin: 0;
+  padding: 32px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.news-mappa-fallback a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Stato mappa bloccata */
+
+.news-mappa-locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 280px;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg, 12px);
+  background: var(--bg-section);
+  color: var(--text-primary, inherit);
+  text-align: center;
+}
+
+.news-mappa-lock {
+  display: block;
+  margin-bottom: 12px;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1;
+}
+
+.news-mappa-locked-title {
+  margin: 0 !important;
+  color: var(--text-primary, inherit) !important;
+  font-size: clamp(1rem, 2.5vw, 1.2rem) !important;
+  font-weight: 700;
+  line-height: 1.4 !important;
+}
+
+.news-mappa-locked-text {
+  max-width: 440px;
+  margin: 8px 0 0 !important;
+  color: var(--text-muted) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Link alla mappa */
+
+.news-mappa-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin-top: 14px;
+  padding: 10px 16px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg-section-alt);
+  color: var(--text-primary, inherit);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.news-mappa-link:hover {
+  border-color: currentColor;
+  background: var(--bg-section);
+  transform: translateY(-2px);
+}
+
+.news-mappa-link:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* ---------- Lista news ---------- */
+
 .news-list {
-  margin-top: 18px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
+  margin-top: 18px;
+  padding: 0 32px 32px;
 }
 
 .news-item {
-  border-radius: var(--radius-lg);
   padding: 14px 16px 16px;
-  background: var(--bg-section);
   border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--bg-section);
   box-shadow: var(--shadow-soft);
 }
 
 .news-item h3 {
+  margin: 0 0 6px;
+  color: var(--text-primary, inherit);
   font-size: 1.05rem;
-  margin-bottom: 6px;
 }
 
 .news-item p {
+  margin: 0;
+  color: var(--text-muted);
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
+/* ---------- Tablet ---------- */
+
 @media (max-width: 768px) {
+  .news-header {
+    padding: 20px 16px 12px;
+  }
+
+  .news-mappa-section {
+    padding: 0 16px 20px;
+  }
+
+  .news-mappa-viewer {
+    height: calc(100vh - 220px);
+    min-height: 420px;
+  }
+
+  .news-mappa-locked {
+    min-height: 250px;
+    padding: 28px 16px;
+  }
+
   .news-list {
     grid-template-columns: minmax(0, 1fr);
+    margin-top: 12px;
+    padding: 0 16px 24px;
+  }
+}
+
+/* ---------- Smartphone ---------- */
+
+@media (max-width: 480px) {
+  .news-mappa-viewer {
+    height: calc(100vh - 250px);
+    min-height: 360px;
+  }
+
+  .news-mappa-locked {
+    min-height: 220px;
+  }
+
+  .news-mappa-locked-text {
+    max-width: 300px;
+    font-size: 0.9rem !important;
+  }
+
+  .news-mappa-link {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ---------- Riduzione animazioni ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .news-mappa-link {
+    transition: none;
+  }
+
+  .news-mappa-link:hover {
+    transform: none;
   }
 }

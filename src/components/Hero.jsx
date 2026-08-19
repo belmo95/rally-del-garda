@@ -6,73 +6,112 @@ import rallyCarImage from "../assets/rally-car.jpg";
 export function Hero({ onChangeSection }) {
   return (
     <section className="hero">
-      {/* Overlay dinamico (rimane come nel tuo stile) */}
       <div className="hero-overlay" />
+      <div className="hero-grid">
+        <div className="hero-left-panel">
+          <div className="hero-badge">26°</div>
 
-      <div className="hero-inner">
-        {/* BLOCCO ALTO: stemma + testo sotto */}
-        <div className="hero-logo-block">
-          <div className="hero-logo-wrapper">
+          <div className="hero-logo-card">
+            <div className="hero-logo-top">memorial Renato Pasquali</div>
+
             <img
               src={logoRally}
-              alt="Stemma Rally del Garda"
+              alt="Logo Rally del Garda"
               className="hero-logo-image"
             />
+
+            
           </div>
 
-          <div className="hero-logo-text">
-            <p>
-              PARTENZA DA TOSCOLANO MADERNO SUL LUNGOLAGO VICINO HOTEL MILANO
-            </p>
+          <div className="hero-date-card">
+            <div className="hero-icon-circle">📅</div>
+            <div>
+              <p className="hero-date-main">31 OTTOBRE - 1 NOVEMBRE 2026</p>
+              <p className="hero-date-sub">TOSCOLANO MADERNO (BS)</p>
+            </div>
+          </div>
+
+          <div className="hero-register-card">
+            <span className="hero-register-label">ISCRIZIONI APERTE DAL:</span>
+            <span className="hero-register-date">1/10/2026</span>
+          </div>
+
+          <div className="hero-program-card">
+            <div className="hero-program-title">PROGRAMMA</div>
+
+            <div className="hero-program-grid">
+              <div className="hero-program-col">
+                <p><strong>PARTENZA E ARRIVO</strong><br />Toscolano Maderno</p>
+                <p><strong>PARCO ASSISTENZA</strong><br />Toscolano Maderno</p>
+                <p><strong>RIORDINO NOTTURNO</strong><br />Salò</p>
+              </div>
+
+              <div className="hero-program-col">
+                <p><strong>7 PROVE SPECIALI</strong><br />per un totale di km 60</p>
+                <p><strong>DUE GIORNI DI GARA</strong><br />adrenalina pura</p>
+                <p><strong>SPETTACOLO, PASSIONE</strong><br />E TERRITORIO</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* SPACER circa 2 cm */}
-        <div className="hero-spacer" />
+        <div className="hero-right-panel">
+          <div className="hero-top-copy">
+            <p className="hero-kicker">DUE GIORNI DI SPETTACOLO</p>
+            <h1>
+              SULLE STRADE PIÙ BELLE
+              <span> DEL GARDA!</span>
+            </h1>
+          </div>
 
-        {/* BLOCCO CENTRALE: testo sx - immagine - testo dx */}
-        <div className="hero-middle-row">
-          <div className="hero-side-text hero-left-text">
-  <p>
-    7 PROVE SPECIALI: <br />
-    1 SABATO SERA E 6 DOMENICA <br />
-    PRIMA PROVA E RIORDINO NOTTURNO <br />
-    A SALO' IN PIAZZA DEL MERCATO
-  </p>
-</div>
+          <div className="hero-categories">
+            <div className="hero-category">RALLY NAZIONALE</div>
+            <div className="hero-category">RALLY STORICO</div>
+            <div className="hero-category">RALLY REGOLARITÀ</div>
+          </div>
 
-          <div className="hero-center-image">
+          <div className="hero-car-stage">
             <img
               src={rallyCarImage}
-              alt="Auto da rally"
-              className="hero-center-image-img"
+              alt="Auto del Rally del Garda"
+              className="hero-car-image"
             />
           </div>
 
-          <div className="hero-side-text hero-right-text">
-            <p>
-             DOMENICA MATTINA PARCO ASSISTENZA A TOSCOLANO
-             E AL TERMINE ARRIVO A MADERNO SUL LUNGOLAGO
-             E PREMIAZIONI SUL PALCO
-            </p>
+          <div className="hero-values">
+            <div className="hero-value">
+              <span>SPORT</span>
+              <small>Adrenalina e competizione</small>
+            </div>
+            <div className="hero-value">
+              <span>PASSIONE</span>
+              <small>La nostra forza da sempre</small>
+            </div>
+            <div className="hero-value">
+              <span>TERRITORIO</span>
+              <small>Valorizziamo il Lago di Garda</small>
+            </div>
+            <div className="hero-value">
+              <span>EMOZIONE</span>
+              <small>Un’esperienza unica</small>
+            </div>
           </div>
-        </div>
 
-        {/* BOTTONI AZIONE – manteniamo il tuo stile */}
-        <div className="hero-actions">
-          <button
-            className="btn-primary"
-            onClick={() => onChangeSection("albo")}
-          >
-            <span className="btn-glow" />
-            Iscriviti ora
-          </button>
-          <button
-            className="btn-secondary"
-            onClick={() => onChangeSection("documenti")}
-          >
-            Regolamento
-          </button>
+          <div className="hero-actions">
+            <button
+              className="btn-primary"
+              onClick={() => onChangeSection("albo")}
+            >
+              Iscriviti ora
+            </button>
+
+            <button
+              className="btn-secondary"
+              onClick={() => onChangeSection("documenti")}
+            >
+              Regolamento
+            </button>
+          </div>
         </div>
       </div>
     </section>

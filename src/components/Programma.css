@@ -1,46 +1,141 @@
 /* src/components/Programma.css */
 
-.programma h2 {
-  font-size: 1.9rem;
+.programma {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+.programma-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 32px 16px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.programma-label {
+  display: inline-block;
   margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.programma h2 {
+  margin: 0;
+  color: var(--text-primary, inherit);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.1;
 }
 
 .programma p {
+  margin: 10px 0 0;
   color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.programma-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 18px;
-  background: var(--bg-section);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+.programma-open-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
   border: 1px solid var(--border-soft);
-}
-
-.programma-table th,
-.programma-table td {
-  padding: 12px 14px;
-  font-size: 0.95rem;
-}
-
-.programma-table thead {
+  border-radius: var(--radius-md, 8px);
   background: var(--bg-section-alt);
+  color: var(--text-primary, inherit);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.programma-table tbody tr:nth-child(odd) {
+.programma-open-link:hover {
+  border-color: currentColor;
   background: var(--bg-section);
+  transform: translateY(-2px);
 }
 
-.programma-table tbody tr:nth-child(even) {
-  background: var(--bg-section-alt);
+.programma-open-link:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Viewer a tutto schermo */
+.programma-viewer {
+  width: 100%;
+  height: calc(100vh - 90px); /* regola questo valore se serve */
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--bg-section);
+  box-sizing: border-box;
+}
+
+.programma-viewer object {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.programma-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  margin: 0;
+  padding: 32px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.programma-fallback a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 768px) {
-  .programma-table th,
-  .programma-table td {
-    padding: 10px 10px;
-    font-size: 0.9rem;
+  .programma-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 16px 12px;
+  }
+
+  .programma-open-link {
+    width: 100%;
+  }
+
+  .programma-viewer {
+    height: calc(100vh - 130px);
+  }
+}
+
+@media (max-width: 480px) {
+  .programma-viewer {
+    height: calc(100vh - 150px);
   }
 }
