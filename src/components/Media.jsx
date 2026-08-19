@@ -4,7 +4,7 @@ import "./Media.css";
 export function Media() {
   return (
     <section className="page-section media">
-      <h2>Media</h2>
+      <h1>Media</h1>
       <p>Video e foto ufficiali del Rally del Garda.</p>
 
       <div className="media-grid">

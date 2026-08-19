@@ -11,7 +11,7 @@ export function News() {
       <div className="news-header">
         <div>
           <span className="news-label">Rally del Garda</span>
-          <h2 id="news-title">News</h2>
+          <h1 id="news-title">News</h1>
           <p>Ultimi comunicati e aggiornamenti sulla gara.</p>
         </div>
       </div>

@@ -117,7 +117,7 @@ export function Albo_di_gara() {
       <div className="albo-header">
         <span className="albo-label">Rally del Garda</span>
 
-        <h2>Albo di Gara</h2>
+        <h1>Albo di Gara</h1>
 
         <p>
           Documenti ufficiali della manifestazione, suddivisi per categoria.

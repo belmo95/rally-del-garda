@@ -72,7 +72,7 @@ export function Documenti() {
       <div className="documenti-header">
         <span className="documenti-label">Rally del Garda</span>
 
-        <h2>Documenti</h2>
+        <h1>Documenti</h1>
 
         <p>
           Seleziona la disciplina per consultare i documenti ufficiali della

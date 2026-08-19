@@ -1,9 +1,10 @@
 // src/components/Hero.jsx
+import { Link } from "react-router-dom";
 import "./Hero.css";
 import logoRally from "../assets/Rally Del Garda targa.png";
 import rallyCarImage from "../assets/rally-car.jpg";
 
-export function Hero({ onChangeSection }) {
+export function Hero() {
   return (
     <section className="hero">
       <div className="hero-overlay" />
@@ -98,19 +99,13 @@ export function Hero({ onChangeSection }) {
           </div>
 
           <div className="hero-actions">
-            <button
-              className="btn-primary"
-              onClick={() => onChangeSection("albo")}
-            >
+            <Link className="btn-primary" to="/albo-di-gara">
               Iscriviti ora
-            </button>
+            </Link>
 
-            <button
-              className="btn-secondary"
-              onClick={() => onChangeSection("documenti")}
-            >
+            <Link className="btn-secondary" to="/documenti">
               Regolamento
-            </button>
+            </Link>
           </div>
         </div>
       </div>

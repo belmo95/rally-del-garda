@@ -9,7 +9,7 @@ export function Programma() {
       <div className="programma-header">
         <div>
           <span className="programma-label">Manifestazione</span>
-          <h2 id="programma-title">Programma</h2>
+          <h1 id="programma-title">Programma</h1>
           <p>Consulta il programma completo direttamente dal sito.</p>
         </div>
 

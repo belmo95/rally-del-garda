@@ -33,7 +33,7 @@
   background:
     linear-gradient(180deg, rgba(4, 12, 23, 0.55), rgba(4, 10, 18, 0.9)),
     linear-gradient(120deg, rgba(5, 17, 31, 0.92), rgba(8, 24, 45, 0.88)),
-    url("./rally-big.jpg");
+    url("../assets/rally-big.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -403,6 +403,11 @@
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-primary {

@@ -1,9 +1,20 @@
 // src/components/Header.jsx
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 import headerLogo from "../assets/Rally Del Garda targa.png";
 
-export function Header({ onChangeSection, activeSection }) {
+const NAV_ITEMS = [
+  { to: "/", label: "Home" },
+  { to: "/programma", label: "Programma" },
+  { to: "/documenti", label: "Documenti" },
+  { to: "/albo-di-gara", label: "Albo di gara" },
+  { to: "/media", label: "Media" },
+  { to: "/news", label: "News" },
+  { to: "/contatti", label: "Contatti" },
+];
+
+export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [theme, setTheme] = useState("light");
 
@@ -22,67 +33,34 @@ export function Header({ onChangeSection, activeSection }) {
     localStorage.setItem("theme", next);
   };
 
-  const handleNavClick = (section) => {
-    onChangeSection(section);
-    setIsMobileMenuOpen(false);
-  };
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const navLinkClass = ({ isActive }) =>
+    isActive ? "nav-link active" : "nav-link";
+
+  const mobileLinkClass = ({ isActive }) =>
+    isActive ? "mobile-link active" : "mobile-link";
 
   return (
     <>
       <header className="header">
         <div className="header-inner">
-          <div
-            className="header-logo"
-            onClick={() => handleNavClick("home")}
-            style={{ cursor: "pointer" }}
-          >
+          <NavLink to="/" className="header-logo" aria-label="Rally del Garda - Home">
             <img src={headerLogo} alt="Rally del Garda" />
-          </div>
+          </NavLink>
 
           {/* MENU DESKTOP */}
-          <nav className="header-nav-desktop">
-            <button
-              className={activeSection === "home" ? "nav-link active" : "nav-link"}
-              onClick={() => handleNavClick("home")}
-            >
-              Home
-            </button>
-            <button
-              className={activeSection === "programma" ? "nav-link active" : "nav-link"}
-              onClick={() => handleNavClick("programma")}
-            >
-              Programma
-            </button>
-            <button
-              className={activeSection === "documenti" ? "nav-link active" : "nav-link"}
-              onClick={() => handleNavClick("documenti")}
-            >
-              Documenti
-            </button>
-            <button
-              className={activeSection === "albo" ? "nav-link active" : "nav-link"}
-              onClick={() => handleNavClick("albo")}
-            >
-              Albo di gara
-            </button>
-            <button
-              className={activeSection === "media" ? "nav-link active" : "nav-link"}
-              onClick={() => handleNavClick("media")}
-            >
-              Media
-            </button>
-            <button
-              className={activeSection === "news" ? "nav-link active" : "nav-link"}
-              onClick={() => handleNavClick("news")}
-            >
-              News
-            </button>
-            <button
-              className={activeSection === "contatti" ? "nav-link active" : "nav-link"}
-              onClick={() => handleNavClick("contatti")}
-            >
-              Contatti
-            </button>
+          <nav className="header-nav-desktop" aria-label="Menu principale">
+            {NAV_ITEMS.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.to === "/"}
+                className={navLinkClass}
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </nav>
 
           {/* Toggle tema + hamburger a destra */}
@@ -91,6 +69,7 @@ export function Header({ onChangeSection, activeSection }) {
               className="theme-toggle"
               type="button"
               onClick={toggleTheme}
+              aria-label={theme === "light" ? "Attiva tema scuro" : "Attiva tema chiaro"}
             >
               {theme === "light" ? "🌙" : "☀️"}
             </button>
@@ -99,6 +78,7 @@ export function Header({ onChangeSection, activeSection }) {
               className={`hamburger-btn ${isMobileMenuOpen ? "open" : ""}`}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               aria-label="Apri menu"
+              aria-expanded={isMobileMenuOpen}
             >
               <span />
               <span />
@@ -109,51 +89,23 @@ export function Header({ onChangeSection, activeSection }) {
       </header>
 
       {/* MENU MOBILE */}
-      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? "show" : ""}`} />
+      <div
+        className={`mobile-menu-overlay ${isMobileMenuOpen ? "show" : ""}`}
+        onClick={closeMobileMenu}
+      />
 
-      <nav className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
-        <button
-          className={activeSection === "home" ? "mobile-link active" : "mobile-link"}
-          onClick={() => handleNavClick("home")}
-        >
-          Home
-        </button>
-        <button
-          className={activeSection === "programma" ? "mobile-link active" : "mobile-link"}
-          onClick={() => handleNavClick("programma")}
-        >
-          Programma
-        </button>
-        <button
-          className={activeSection === "documenti" ? "mobile-link active" : "mobile-link"}
-          onClick={() => handleNavClick("documenti")}
-        >
-          Documenti
-        </button>
-        <button
-          className={activeSection === "albo" ? "mobile-link active" : "mobile-link"}
-          onClick={() => handleNavClick("albo")}
-        >
-          Albo di gara
-        </button>
-        <button
-          className={activeSection === "media" ? "mobile-link active" : "mobile-link"}
-          onClick={() => handleNavClick("media")}
-        >
-          Media
-        </button>
-        <button
-          className={activeSection === "news" ? "mobile-link active" : "mobile-link"}
-          onClick={() => handleNavClick("news")}
-        >
-          News
-        </button>
-        <button
-          className={activeSection === "contatti" ? "mobile-link active" : "mobile-link"}
-          onClick={() => handleNavClick("contatti")}
-        >
-          Contatti
-        </button>
+      <nav className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`} aria-label="Menu mobile">
+        {NAV_ITEMS.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            end={item.to === "/"}
+            className={mobileLinkClass}
+            onClick={closeMobileMenu}
+          >
+            {item.label}
+          </NavLink>
+        ))}
       </nav>
     </>
   );
