@@ -58,8 +58,8 @@ export function CookiePolicy() {
 
         <h2>Contatti</h2>
         <p>
-          Per ulteriori informazioni è possibile contattare info@rallydelgarda.it oppure il numero
-          0039 320 2766400.
+          Per ulteriori informazioni è possibile contattare info@rallydelgarda.com oppure il numero
+          +39 335 5904325.
         </p>
       </div>
     </section>

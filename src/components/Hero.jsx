@@ -62,6 +62,7 @@ export function Hero() {
             <h1>
               SULLE STRADE PIÙ BELLE
               <span> DEL GARDA!</span>
+              <span className="visually-hidden">Rally del Garda - rally nazionale sul Lago di Garda</span>
             </h1>
           </div>
 

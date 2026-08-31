@@ -15,7 +15,7 @@ export function PrivacyPolicy() {
         <h2>Titolare del trattamento</h2>
         <p>
           Il titolare del trattamento è l’organizzazione del sito Rally del Garda / Northon Racing.
-          Email di contatto: info@rallydelgarda.it. Telefono: 0039 320 2766400.
+          Email di contatto: info@rallydelgarda.com. Telefono: +39 335 5904325.
         </p>
 
         <h2>Tipologie di dati raccolti</h2>
@@ -78,8 +78,8 @@ export function PrivacyPolicy() {
 
         <h2>Contatti</h2>
         <p>
-          Per richieste relative alla privacy è possibile scrivere a info@rallydelgarda.it
-          oppure contattare il numero 0039 320 2766400.
+          Per richieste relative alla privacy è possibile scrivere a info@rallydelgarda.com
+          oppure contattare il numero +39 335 5904325.
         </p>
 
         <h2>Aggiornamenti</h2>

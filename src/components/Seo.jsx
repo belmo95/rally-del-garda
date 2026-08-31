@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const SITE_NAME = "Rally del Garda";
 const SITE_URL = "https://rallydelgarda.com";
-const DEFAULT_IMAGE = `${SITE_URL}/icon-512x512.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 function setMetaByName(name, content) {
   if (!content) return;

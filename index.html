@@ -4,30 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#111827" />
-    <meta name="description" content="Rally del Garda: programma, news, documenti ufficiali, albo di gara, iscritti, ordine di partenza e classifiche." />
-    <meta name="author" content="Rally del Garda" />
-    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Rally del Garda: programma, news, documenti ufficiali, albo di gara, iscritti, ordine di partenza e classifiche. Rally nazionale sul Lago di Garda a Toscolano Maderno (BS)." />
+    <meta name="author" content="Rally del Garda - Northon Racing" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <meta name="language" content="Italian" />
+    <meta name="keywords" content="rally del garda, rally lago di garda, rally nazionale, rally storico, rally regolarità, Toscolano Maderno, Northon Racing, programmm rally, iscrizioni rally" />
+    <meta name="geo.region" content="IT-BS" />
+    <meta name="geo.placename" content="Toscolano Maderno, Lago di Garda" />
+    <meta name="geo.position" content="45.6402;10.6094" />
+    <meta name="ICBM" content="45.6402, 10.6094" />
     <link rel="canonical" href="https://rallydelgarda.com/" />
     <link rel="icon" type="image/png" href="/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
     <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph -->
     <meta property="og:locale" content="it_IT" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rally del Garda" />
     <meta property="og:title" content="Rally del Garda | News, Programma e Classifiche" />
     <meta property="og:description" content="Tutte le informazioni ufficiali sul Rally del Garda: programma, news, documenti, albo di gara, iscritti, ordine di partenza e classifiche." />
     <meta property="og:url" content="https://rallydelgarda.com/" />
-    <meta property="og:image" content="https://rallydelgarda.com/icon-512x512.png" />
+    <meta property="og:image" content="https://rallydelgarda.com/og-image.jpg" />
+    <meta property="og:image:width" content="2474" />
+    <meta property="og:image:height" content="3504" />
+    <meta property="og:image:alt" content="Rally del Garda - rally nazionale sul Lago di Garda" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Rally del Garda | News, Programma e Classifiche" />
-    <meta name="twitter:description" content="Tutte le informazioni ufficiali sul Rally del Garda." />
-    <meta name="twitter:image" content="https://rallydelgarda.com/icon-512x512.png" />
+    <meta name="twitter:description" content="Tutte le informazioni ufficiali sul Rally del Garda: programma, news, documenti, albo di gara e classifiche." />
+    <meta name="twitter:image" content="https://rallydelgarda.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Rally del Garda - rally nazionale sul Lago di Garda" />
+
     <title>Rally del Garda | News, Programma, Documenti e Classifiche</title>
+
+    <!-- Structured data: Organizzazione -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Rally del Garda",
+        "alternateName": "Northon Racing",
+        "url": "https://rallydelgarda.com/",
+        "logo": "https://rallydelgarda.com/icon-512x512.png",
+        "email": "info@rallydelgarda.com",
+        "telephone": "+39 335 5904325",
+        "sameAs": ["https://rallydelgarda.com/"]
+      }
+    </script>
+
+    <!-- Structured data: Sito web -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Rally del Garda",
+        "url": "https://rallydelgarda.com/",
+        "inLanguage": "it-IT",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Rally del Garda"
+        }
+      }
+    </script>
+
+    <!-- Structured data: Evento sportivo -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "SportsEvent",
         "name": "Rally del Garda",
-        "description": "Sito ufficiale del Rally del Garda con programma, news, documenti, albo di gara, iscritti, ordine di partenza e classifiche.",
+        "alternateName": "26° Rally del Garda - Memorial Renato Pasquali",
+        "description": "Sito ufficiale del Rally del Garda con programma, news, documenti, albo di gara, iscritti, ordine di partenza e classifiche. Rally nazionale, storico e regolarità sul Lago di Garda.",
         "url": "https://rallydelgarda.com/",
         "startDate": "2026-10-31",
         "endDate": "2026-11-01",
@@ -44,7 +94,7 @@
             "addressCountry": "IT"
           }
         },
-        "image": "https://rallydelgarda.com/icon-512x512.png",
+        "image": "https://rallydelgarda.com/og-image.jpg",
         "organizer": {
           "@type": "Organization",
           "name": "Northon Racing",
@@ -57,6 +107,12 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      Rally del Garda - sito ufficiale del rally nazionale sul Lago di Garda
+      (Toscolano Maderno, BS). Programma, news, documenti, albo di gara,
+      iscritti, ordine di partenza e classifiche. Per navigare il sito abilita
+      JavaScript. Info: info@rallydelgarda.com - +39 335 5904325.
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
