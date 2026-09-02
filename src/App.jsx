@@ -16,6 +16,7 @@ import { CookiePolicy } from "./components/CookiePolicy";
 import { TerminiCondizioni } from "./components/TerminiCondizioni";
 import { NotFound } from "./components/NotFound";
 import { Seo } from "./components/Seo";
+import { CookieBanner } from "./components/CookieBanner";
 
 function App() {
   return (
@@ -159,6 +160,8 @@ function App() {
       </main>
 
       <Footer />
+
+      <CookieBanner />
     </div>
   );
 }

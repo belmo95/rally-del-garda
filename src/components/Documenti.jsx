@@ -3,6 +3,13 @@
 import { useState } from "react";
 import "./Documenti.css";
 
+// Import dei PDF (percorsi relativi a src)
+import moderne_RPG from "../assets/documenti/moderne/RPG.pdf";
+import moderne_modulo from "../assets/documenti/moderne/SCHEDA ISCRIZIONE MODERNO.pdf";
+
+
+import storiche_modulo from "../assets/documenti/storiche/SCHEDA ISCRIZIONE STORICO.pdf";
+
 const discipline = [
   {
     id: "moderne",
@@ -10,17 +17,14 @@ const discipline = [
     description: "Documenti relativi alle vetture moderne.",
     documents: [
       {
-        title: "Regolamento di gara",
-        file: "/documenti/moderne/regolamento-gara.pdf",
+        title: "Regolamento Particolare di Gara (RPG)",
+        file: moderne_RPG,
       },
       {
-        title: "Mappa del percorso",
-        file: "/documenti/moderne/mappa-percorso.pdf",
+        title: "Modulo iscrizioni",
+        file: moderne_modulo,
       },
-      {
-        title: "Modulo iscrizione",
-        file: "/documenti/moderne/modulo-iscrizione.pdf",
-      },
+  
     ],
   },
   {
@@ -29,16 +33,8 @@ const discipline = [
     description: "Documenti relativi alle vetture storiche.",
     documents: [
       {
-        title: "Regolamento di gara",
-        file: "/documenti/storiche/regolamento-gara.pdf",
-      },
-      {
-        title: "Mappa del percorso",
-        file: "/documenti/storiche/mappa-percorso.pdf",
-      },
-      {
-        title: "Modulo iscrizione",
-        file: "/documenti/storiche/modulo-iscrizione.pdf",
+        title: "Modulo iscrizioni",
+        file: storiche_modulo,
       },
     ],
   },
@@ -46,26 +42,15 @@ const discipline = [
     id: "regolarita-media50",
     label: "Regolarità Media50",
     description: "Documenti relativi alla disciplina Regolarità Media50.",
-    documents: [
-      {
-        title: "Regolamento di gara",
-        file: "/documenti/regolarita-media50/regolamento-gara.pdf",
-      },
-      {
-        title: "Mappa del percorso",
-        file: "/documenti/regolarita-media50/mappa-percorso.pdf",
-      },
-      {
-        title: "Modulo iscrizione",
-        file: "/documenti/regolarita-media50/modulo-iscrizione.pdf",
-      },
-    ],
+    documents: [],
   },
 ];
 
 export function Documenti() {
   const [menuAperto, setMenuAperto] = useState(false);
-  const documentiDisponibili = false;
+
+  // Se vuoi mostrare subito i documenti, metti true
+  const documentiDisponibili = true;
 
   return (
     <section className="page-section documenti" id="documenti">
@@ -119,7 +104,9 @@ export function Documenti() {
                     className="documenti-discipline-icon"
                     aria-hidden="true"
                   >
-                    {documentiDisponibili ? "📄" : "🔒"}
+                    {categoria.documents.length > 0 && documentiDisponibili
+                      ? "📄"
+                      : "🔒"}
                   </span>
 
                   <div>
@@ -128,10 +115,10 @@ export function Documenti() {
                   </div>
                 </div>
 
-                <ul className="documenti-list">
-                  {categoria.documents.map((documento) => (
-                    <li className="documenti-item" key={documento.title}>
-                      {documentiDisponibili ? (
+                {categoria.documents.length > 0 && documentiDisponibili ? (
+                  <ul className="documenti-list">
+                    {categoria.documents.map((documento) => (
+                      <li className="documenti-item" key={documento.title}>
                         <a
                           href={documento.file}
                           target="_blank"
@@ -141,29 +128,18 @@ export function Documenti() {
                           <span>{documento.title}</span>
                           <span className="documenti-format">PDF</span>
                         </a>
-                      ) : (
-                        <span
-                          className="documento-disponibile"
-                          aria-disabled="true"
-                        >
-                          <span aria-hidden="true">🔒</span>
-                          <span>{documento.title}</span>
-                          <span className="documenti-format">PDF</span>
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="documenti-avviso" role="status">
+                    I documenti ufficiali saranno disponibili un mese prima della
+                    gara.
+                  </p>
+                )}
               </li>
             ))}
           </ul>
-
-          {!documentiDisponibili && (
-            <p className="documenti-avviso" role="status">
-              I documenti ufficiali saranno disponibili un mese prima della
-              gara.
-            </p>
-          )}
         </div>
       </nav>
     </section>
