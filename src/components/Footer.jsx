@@ -9,7 +9,7 @@ export function Footer() {
         <p>Rally del Garda - Organizzato da Northon Racing e AUTOCONSULT ASD</p>
         <p>
           Email:{" "}
-          <a href="mailto:info@rallydelgarda.it">info@rallydelgarda.it</a>{" "}
+          <a href="mailto:info@rallydelgarda.com">info@rallydelgarda.com</a>{" "}
           - Tel:{" "}
           <a href="tel:+393202766400">0039 335 5904325</a>
         </p>

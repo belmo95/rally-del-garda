@@ -99,7 +99,7 @@ export function Hero() {
           </div>
 
           <div className="hero-actions">
-            <Link className="btn-primary" to="/albo-di-gara">
+            <Link className="btn-primary" to="/documenti">
               Iscriviti ora
             </Link>
 
