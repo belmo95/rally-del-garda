@@ -9,6 +9,7 @@ import { Documenti } from "./components/Documenti";
 import { Albo_di_gara } from "./components/Albo_di_gara";
 import { Media } from "./components/Media";
 import { News } from "./components/News";
+import { StruttureConvenzionate } from "./components/StruttureConvenzionate";
 import { Contatti } from "./components/Contatti";
 import { Footer } from "./components/Footer";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
@@ -100,6 +101,19 @@ function App() {
                   description="Ultimi comunicati, aggiornamenti e mappa della gara del Rally del Garda."
                 />
                 <News />
+              </div>
+            }
+          />
+          <Route
+            path="/strutture-convenzionate"
+            element={
+              <div className="page-section">
+                <Seo
+                  path="/strutture-convenzionate"
+                  title="Strutture convenzionate"
+                  description="Elenco degli alberghi e delle strutture convenzionate per il Rally del Garda."
+                />
+                <StruttureConvenzionate />
               </div>
             }
           />

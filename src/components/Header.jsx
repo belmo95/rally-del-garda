@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { to: "/albo-di-gara", label: "Albo di gara" },
   { to: "/media", label: "Media" },
   { to: "/news", label: "News" },
+  { to: "/strutture-convenzionate", label: "Strutture convenzionate" },
   { to: "/contatti", label: "Contatti" },
 ];
 
