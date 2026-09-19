@@ -20,8 +20,6 @@ export function Hero() {
               alt="Logo Rally del Garda"
               className="hero-logo-image"
             />
-
-            
           </div>
 
           <div className="hero-date-card">
@@ -65,10 +63,26 @@ export function Hero() {
             </h1>
           </div>
 
+          {/* Categorie come pulsanti */}
           <div className="hero-categories">
-            <div className="hero-category">RALLY NAZIONALE</div>
-            <div className="hero-category">RALLY STORICO</div>
-            <div className="hero-category">RALLY REGOLARITÀ</div>
+            <Link
+              to="/documenti?cat=moderne"
+              className="hero-category hero-category-btn"
+            >
+              RALLY NAZIONALE
+            </Link>
+            <Link
+              to="/documenti?cat=storiche"
+              className="hero-category hero-category-btn"
+            >
+              RALLY STORICO
+            </Link>
+            <Link
+              to="/documenti?cat=regolarita-media50"
+              className="hero-category hero-category-btn"
+            >
+              RALLY REGOLARITÀ
+            </Link>
           </div>
 
           <div className="hero-car-stage">
