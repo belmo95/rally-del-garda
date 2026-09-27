@@ -11,7 +11,7 @@ export function Footer() {
           Email:{" "}
           <a href="mailto:info@rallydelgarda.com">info@rallydelgarda.com</a>{" "}
           - Tel:{" "}
-          <a href="tel:+393202766400">0039 335 5904325</a>
+          <a href="tel:+393355904325">0039 335 5904325</a>
         </p>
 
         <div className="footer-legal-links">
@@ -35,9 +35,7 @@ export function Footer() {
           </a>
         </div>
         <div className="footer-credit-phone">
-          <a href="tel:+393202766400" className="footer-credit-phone-link">
-            320 2766400
-          </a>
+        
         </div>
       </div>
     </footer>

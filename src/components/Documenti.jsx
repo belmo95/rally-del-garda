@@ -20,6 +20,13 @@ import utilizzo_camera_car from "../assets/documenti/moderne/UTILIZZO CAMERA CAR
 import storiche_modulo from "../assets/documenti/storiche/SCHEDA ISCRIZIONE STORICO.pdf";
 import storiche_rpg_classico from "../assets/documenti/storiche/RPG STORICO E CLASSICO.pdf";
 
+// PDF – Regolarità Media50
+// Copia i tre file in src/assets/documenti/regolarita/ e sostituisci
+// FILE_1.pdf, FILE_2.pdf, FILE_3.pdf con i nomi esatti dei tuoi PDF.
+import regolarita_documento_1 from "../assets/documenti/regolarita/FILE_1.doc?url";
+import regolarita_documento_2 from "../assets/documenti/regolarita/FILE_2.pdf";
+import regolarita_documento_3 from "../assets/documenti/regolarita/FILE_3.pdf";
+
 const discipline = [
   {
     id: "moderne",
@@ -79,7 +86,20 @@ const discipline = [
     id: "regolarita-media50",
     label: "Regolarità Media50",
     description: "Documenti relativi alla disciplina Regolarità Media50.",
-    documents: [],
+    documents: [
+      {
+        title: "Programma REG",
+        file: regolarita_documento_1,
+      },
+      {
+        title: "RPG AUTOSTORICHE",
+        file: regolarita_documento_2,
+      },
+      {
+        title: "SCHEDA ISCRIZIONE RALLY",
+        file: regolarita_documento_3,
+      },
+    ],
   },
 ];
 
