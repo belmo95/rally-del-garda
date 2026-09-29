@@ -4,8 +4,6 @@ import mappaUrl from "../assets/mappa-gara.pdf";
 import "./News.css";
 
 export function News() {
-  const mappaDisponibile = false;
-
   return (
     <section className="page-section news" aria-labelledby="news-title">
       <div className="news-header">
@@ -16,64 +14,37 @@ export function News() {
         </div>
       </div>
 
-      {/* Mappa della gara come prima “news” */}
+      {/* Mappa della gara come prima news */}
       <div className="news-mappa-section">
         <h3 className="news-mappa-title">Mappa della gara</h3>
+        <p className="news-mappa-desc">
+          Consulta la mappa ufficiale del percorso direttamente dal sito.
+        </p>
 
-        {mappaDisponibile ? (
-          <>
-            <p className="news-mappa-desc">
-              Consulta la mappa ufficiale del percorso direttamente dal sito.
-            </p>
-
-            <div className="news-mappa-viewer">
-              <object
-                data={mappaUrl}
-                type="application/pdf"
-                aria-label="Mappa ufficiale del Rally del Garda"
-              >
-                <p className="news-mappa-fallback">
-                  Il tuo browser non riesce a visualizzare il PDF direttamente.
-                  <br />
-                  <a
-                    href={mappaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Apri la mappa in una nuova scheda
-                  </a>
-                </p>
-              </object>
-            </div>
-
-            <a
-              className="news-mappa-link"
-              href={mappaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Apri mappa in una nuova scheda
-            </a>
-          </>
-        ) : (
-          <div
-            className="news-mappa-locked"
-            role="status"
-            aria-label="Mappa non ancora disponibile"
+        <div className="news-mappa-viewer">
+          <object
+            data={mappaUrl}
+            type="application/pdf"
+            aria-label="Mappa ufficiale del Rally del Garda"
           >
-            <span className="news-mappa-lock" aria-hidden="true">
-              🔒
-            </span>
-
-            <p className="news-mappa-locked-title">
-              Mappa temporaneamente non disponibile
+            <p className="news-mappa-fallback">
+              Il tuo browser non riesce a visualizzare il PDF direttamente.
+              <br />
+              <a href={mappaUrl} target="_blank" rel="noopener noreferrer">
+                Apri la mappa in una nuova scheda
+              </a>
             </p>
+          </object>
+        </div>
 
-            <p className="news-mappa-locked-text">
-              La mappa ufficiale sarà visibile un mese prima della gara.
-            </p>
-          </div>
-        )}
+        <a
+          className="news-mappa-link"
+          href={mappaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apri mappa in una nuova scheda
+        </a>
       </div>
 
       {/* Lista comunicati */}

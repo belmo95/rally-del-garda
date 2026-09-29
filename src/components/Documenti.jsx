@@ -24,7 +24,7 @@ import storiche_rpg_classico from "../assets/documenti/storiche/RPG STORICO E CL
 // Copia i tre file in src/assets/documenti/regolarita/ e sostituisci
 // FILE_1.pdf, FILE_2.pdf, FILE_3.pdf con i nomi esatti dei tuoi PDF.
 import regolarita_documento_1 from "../assets/documenti/regolarita/FILE_1.doc?url";
-import regolarita_documento_2 from "../assets/documenti/regolarita/FILE_2.pdf";
+//import regolarita_documento_2 from "../assets/documenti/regolarita/FILE_2.pdf";
 import regolarita_documento_3 from "../assets/documenti/regolarita/FILE_3.pdf";
 
 const discipline = [
@@ -91,10 +91,10 @@ const discipline = [
         title: "Programma REG",
         file: regolarita_documento_1,
       },
-      {
-        title: "RPG AUTOSTORICHE",
-        file: regolarita_documento_2,
-      },
+      //{
+       // title: "RPG AUTOSTORICHE",
+        //file: regolarita_documento_2,
+      //},
       {
         title: "SCHEDA ISCRIZIONE RALLY",
         file: regolarita_documento_3,
