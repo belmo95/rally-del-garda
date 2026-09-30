@@ -95,10 +95,10 @@ const discipline = [
        // title: "RPG AUTOSTORICHE",
         //file: regolarita_documento_2,
       //},
-      {
-        title: "SCHEDA ISCRIZIONE RALLY",
-        file: regolarita_documento_3,
-      },
+      //{
+       // title: "SCHEDA ISCRIZIONE RALLY",
+       // file: regolarita_documento_3,
+     // },
     ],
   },
 ];
