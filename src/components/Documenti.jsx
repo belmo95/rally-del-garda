@@ -8,7 +8,7 @@ import "./Documenti.css";
 import moderne_RPG from "../assets/documenti/moderne/RPG.pdf";
 import moderne_modulo from "../assets/documenti/moderne/SCHEDA ISCRIZIONE MODERNO.pdf";
 
-// Nuovi PDF – Moderne (7 documenti)
+// Nuovi PDF – Moderne
 import auto_ricognizioni from "../assets/documenti/moderne/AUTO RICOGNIZIONI.PDF";
 import dichiarazione_conformita_abbigliamento_2026 from "../assets/documenti/moderne/Dichiarazione Conformita Abbigliamento 2026.pdf";
 import dichiarazione_verita_unicarally_2026 from "../assets/documenti/moderne/DICHIARAZIONE DI VERITA' UN ICA RALLY DEL LAGO DI GARDA 2026.pdf";
@@ -21,11 +21,11 @@ import storiche_modulo from "../assets/documenti/storiche/SCHEDA ISCRIZIONE STOR
 import storiche_rpg_classico from "../assets/documenti/storiche/RPG STORICO E CLASSICO.pdf";
 
 // PDF – Regolarità Media50
-// Copia i tre file in src/assets/documenti/regolarita/ e sostituisci
-// FILE_1.pdf, FILE_2.pdf, FILE_3.pdf con i nomi esatti dei tuoi PDF.
 import regolarita_documento_1 from "../assets/documenti/regolarita/RALLY DEL GARDA.pdf";
-//import regolarita_documento_2 from "../assets/documenti/regolarita/FILE_2.pdf";
-//import regolarita_documento_3 from "../assets/documenti/regolarita/FILE_3.pdf";
+
+// File DOCX in public/documenti/regolarita/
+// Non va importato: viene servito direttamente dalla cartella public.
+const regolarita_documento_3 = "/documenti/regolarita/iscrizione.docx";
 
 const discipline = [
   {
@@ -36,34 +36,42 @@ const discipline = [
       {
         title: "Regolamento Particolare di Gara (RPG)",
         file: moderne_RPG,
+        format: "PDF",
       },
       {
         title: "Modulo iscrizioni",
         file: moderne_modulo,
+        format: "PDF",
       },
       {
         title: "Auto ricognizioni",
         file: auto_ricognizioni,
+        format: "PDF",
       },
       {
         title: "Dichiarazione di conformità abbigliamento 2026",
         file: dichiarazione_conformita_abbigliamento_2026,
+        format: "PDF",
       },
       {
         title: "Dichiarazione di verità – Unica Rally del Lago di Garda 2026",
         file: dichiarazione_verita_unicarally_2026,
+        format: "PDF",
       },
       {
         title: "Dichiarazione neopatentato",
         file: dichiarazione_neopatentato,
+        format: "PDF",
       },
       {
         title: "Dichiarazione storico – classifiche speciali e 2° spazi assistenza",
         file: dichiarazione_storico_classifiche_speciali_e_2_spazi_assistenza,
+        format: "PDF",
       },
       {
         title: "Utilizzo camera car",
         file: utilizzo_camera_car,
+        format: "PDF",
       },
     ],
   },
@@ -75,10 +83,12 @@ const discipline = [
       {
         title: "Modulo iscrizioni",
         file: storiche_modulo,
+        format: "PDF",
       },
       {
         title: "RPG Storico e Classico",
         file: storiche_rpg_classico,
+        format: "PDF",
       },
     ],
   },
@@ -90,15 +100,13 @@ const discipline = [
       {
         title: "Programma REG",
         file: regolarita_documento_1,
+        format: "PDF",
       },
-      //{
-       // title: "RPG AUTOSTORICHE",
-        //file: regolarita_documento_2,
-      //},
-      //{
-       // title: "SCHEDA ISCRIZIONE RALLY",
-       // file: regolarita_documento_3,
-     // },
+      {
+        title: "SCHEDA ISCRIZIONE RALLY",
+        file: regolarita_documento_3,
+        format: "DOCX",
+      },
     ],
   },
 ];
@@ -171,10 +179,13 @@ export function Documenti() {
                       href={documento.file}
                       target="_blank"
                       rel="noopener noreferrer"
+                      download={documento.format === "DOCX"}
                     >
                       <span aria-hidden="true">📄</span>
                       <span>{documento.title}</span>
-                      <span className="documenti-format">PDF</span>
+                      <span className="documenti-format">
+                        {documento.format}
+                      </span>
                     </a>
                   </li>
                 ))}

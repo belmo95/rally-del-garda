@@ -71,9 +71,10 @@
   line-height: 1;
 }
 
+/* Titoli: Moderne, Storiche, Regolarità Media50 */
 .documenti-categoria-heading h3 {
   margin: 0;
-  color: var(--text-primary, inherit);
+  color: #0066cc;
   font-size: 1.05rem;
   line-height: 1.3;
 }
