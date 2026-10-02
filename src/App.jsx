@@ -8,6 +8,7 @@ import { Programma } from "./components/Programma";
 import { Documenti } from "./components/Documenti";
 import { Albo_di_gara } from "./components/Albo_di_gara";
 import { Media } from "./components/Media";
+import { VideoGallery } from "./components/VideoGallery";
 import { News } from "./components/News";
 import { StruttureConvenzionate } from "./components/StruttureConvenzionate";
 import { Contatti } from "./components/Contatti";
@@ -39,6 +40,7 @@ function App() {
               </section>
             }
           />
+
           <Route
             path="/programma"
             element={
@@ -52,6 +54,7 @@ function App() {
               </div>
             }
           />
+
           <Route
             path="/documenti"
             element={
@@ -65,6 +68,7 @@ function App() {
               </div>
             }
           />
+
           <Route
             path="/albo-di-gara"
             element={
@@ -78,6 +82,7 @@ function App() {
               </div>
             }
           />
+
           <Route
             path="/media"
             element={
@@ -85,12 +90,27 @@ function App() {
                 <Seo
                   path="/media"
                   title="Media"
-                  description="Video, foto e riprese ufficiali del Rally del Garda: highlights delle prove speciali e gallerie fotografiche."
+                  description="Video e foto ufficiali del Rally del Garda."
                 />
                 <Media />
               </div>
             }
           />
+
+          <Route
+            path="/media/video/:galleryId"
+            element={
+              <div className="page-section">
+                <Seo
+                  path="/media/video"
+                  title="Video"
+                  description="Video ufficiali del Rally del Garda."
+                />
+                <VideoGallery />
+              </div>
+            }
+          />
+
           <Route
             path="/news"
             element={
@@ -104,6 +124,7 @@ function App() {
               </div>
             }
           />
+
           <Route
             path="/strutture-convenzionate"
             element={
@@ -117,6 +138,7 @@ function App() {
               </div>
             }
           />
+
           <Route
             path="/contatti"
             element={
@@ -130,6 +152,7 @@ function App() {
               </div>
             }
           />
+
           <Route
             path="/privacy-policy"
             element={
@@ -143,6 +166,7 @@ function App() {
               </div>
             }
           />
+
           <Route
             path="/cookie-policy"
             element={
@@ -156,6 +180,7 @@ function App() {
               </div>
             }
           />
+
           <Route
             path="/termini-e-condizioni"
             element={
@@ -169,6 +194,7 @@ function App() {
               </div>
             }
           />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

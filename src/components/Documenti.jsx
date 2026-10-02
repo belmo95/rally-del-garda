@@ -4,29 +4,27 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Documenti.css";
 
-// Import dei PDF (percorsi relativi a src)
+// Import dei PDF – Moderne
 import moderne_RPG from "../assets/documenti/moderne/RPG.pdf";
 import moderne_modulo from "../assets/documenti/moderne/SCHEDA ISCRIZIONE MODERNO.pdf";
-
-// Nuovi PDF – Moderne
 import auto_ricognizioni from "../assets/documenti/moderne/AUTO RICOGNIZIONI.PDF";
 import dichiarazione_conformita_abbigliamento_2026 from "../assets/documenti/moderne/Dichiarazione Conformita Abbigliamento 2026.pdf";
 import dichiarazione_verita_unicarally_2026 from "../assets/documenti/moderne/DICHIARAZIONE DI VERITA' UN ICA RALLY DEL LAGO DI GARDA 2026.pdf";
 import dichiarazione_neopatentato from "../assets/documenti/moderne/DICHIARAZIONE NEOPATENTATO.pdf";
 import dichiarazione_storico_classifiche_speciali_e_2_spazi_assistenza from "../assets/documenti/moderne/DICHIARAZIONE STORICO CLASSIFICHE SPECIALI E 2° CONDUTTORE.pdf";
 import utilizzo_camera_car from "../assets/documenti/moderne/UTILIZZO CAMERA CAR.pdf";
-
-// PDF – Storiche
-import storiche_modulo from "../assets/documenti/storiche/SCHEDA ISCRIZIONE STORICO.pdf";
+import tdt_garda26_moderno from "../assets/documenti/moderne/_TDT_GARDA26_MODERNO.pdf";
+import Cartina_generale from "../assets/documenti/moderne/mappa-gara.pdf";
+// Import dei PDF – Storiche
+import storiche_modulo from "../assets/documenti/storiche/SCHEDA ISCRIZIONE RALLY STORICO.pdf";
 import storiche_rpg_classico from "../assets/documenti/storiche/RPG STORICO E CLASSICO.pdf";
-
-// PDF – Regolarità Media50
+import tdt_garda26_storico from "../assets/documenti/storiche/_TDT_GARDA26_STORICO.pdf";
+import mappa_gara from "../assets/documenti/storiche/mappa-gara.pdf";
+// Import dei PDF – Regolarità Media50
 import regolarita_documento_1 from "../assets/documenti/regolarita/RALLY DEL GARDA.pdf";
-
-// File DOCX in public/documenti/regolarita/
-// Non va importato: viene servito direttamente dalla cartella public.
-const regolarita_documento_3 = "/documenti/regolarita/iscrizione.docx";
-
+import regolarita_modulo from "../assets/documenti/regolarita/SCHEDA ISCRIZIONE REGOLARITA.pdf";
+import tdt_garda26_regolarita from "../assets/documenti/regolarita/_TDT_GARDA26_REGOLARITÀ.pdf";
+import mappa_gara1 from "../assets/documenti/storiche/mappa-gara.pdf";
 const discipline = [
   {
     id: "moderne",
@@ -64,7 +62,8 @@ const discipline = [
         format: "PDF",
       },
       {
-        title: "Dichiarazione storico – classifiche speciali e 2° spazi assistenza",
+        title:
+          "Dichiarazione storico – classifiche speciali e 2° spazi assistenza",
         file: dichiarazione_storico_classifiche_speciali_e_2_spazi_assistenza,
         format: "PDF",
       },
@@ -73,6 +72,17 @@ const discipline = [
         file: utilizzo_camera_car,
         format: "PDF",
       },
+      {
+        title: "TDT Garda 2026 – Moderno",
+        file: tdt_garda26_moderno,
+        format: "PDF",
+      },
+      {
+        title: "Cartina generale",
+        file: Cartina_generale,
+        format: "PDF",
+      },
+
     ],
   },
   {
@@ -80,14 +90,25 @@ const discipline = [
     label: "Storiche",
     description: "Documenti relativi alle vetture storiche.",
     documents: [
+        {
+        title: "RPG Storico e Classico",
+        file: storiche_rpg_classico,
+        format: "PDF",
+      },
       {
         title: "Modulo iscrizioni",
         file: storiche_modulo,
         format: "PDF",
       },
+    
       {
-        title: "RPG Storico e Classico",
-        file: storiche_rpg_classico,
+        title: "TDT Garda 2026 – Storico",
+        file: tdt_garda26_storico,
+        format: "PDF",
+      },
+         {
+        title: "Cartina Generale",
+        file: mappa_gara,
         format: "PDF",
       },
     ],
@@ -103,9 +124,19 @@ const discipline = [
         format: "PDF",
       },
       {
-        title: "SCHEDA ISCRIZIONE RALLY",
-        file: regolarita_documento_3,
-        format: "DOCX",
+        title: "Modulo iscrizioni",
+        file: regolarita_modulo,
+        format: "PDF",
+      },
+      {
+        title: "TDT Garda 2026 – Regolarità",
+        file: tdt_garda26_regolarita,
+        format: "PDF",
+      },
+       {
+        title: "Cartina Generale",
+        file: mappa_gara1,
+        format: "PDF",
       },
     ],
   },

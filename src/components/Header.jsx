@@ -1,5 +1,5 @@
 // src/components/Header.jsx
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 import headerLogo from "../assets/Rally Del Garda targa.png";
@@ -17,22 +17,6 @@ const NAV_ITEMS = [
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
-
-  // all'avvio, leggi tema salvato o usa light
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    const initial = saved === "dark" ? "dark" : "light";
-    setTheme(initial);
-    document.documentElement.setAttribute("data-theme", initial);
-  }, []);
-
-  const toggleTheme = () => {
-    const next = theme === "light" ? "dark" : "light";
-    setTheme(next);
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  };
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
@@ -46,11 +30,15 @@ export function Header() {
     <>
       <header className="header">
         <div className="header-inner">
-          <NavLink to="/" className="header-logo" aria-label="Rally del Garda - Home">
+          <NavLink
+            to="/"
+            className="header-logo"
+            aria-label="Rally del Garda - Home"
+            onClick={closeMobileMenu}
+          >
             <img src={headerLogo} alt="Rally del Garda" />
           </NavLink>
 
-          {/* MENU DESKTOP */}
           <nav className="header-nav-desktop" aria-label="Menu principale">
             {NAV_ITEMS.map((item) => (
               <NavLink
@@ -64,22 +52,14 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Toggle tema + hamburger a destra */}
           <div className="header-right">
             <button
-              className="theme-toggle"
-              type="button"
-              onClick={toggleTheme}
-              aria-label={theme === "light" ? "Attiva tema scuro" : "Attiva tema chiaro"}
-            >
-              {theme === "light" ? "🌙" : "☀️"}
-            </button>
-
-            <button
               className={`hamburger-btn ${isMobileMenuOpen ? "open" : ""}`}
+              type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              aria-label="Apri menu"
+              aria-label={isMobileMenuOpen ? "Chiudi menu" : "Apri menu"}
               aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               <span />
               <span />
@@ -89,13 +69,17 @@ export function Header() {
         </div>
       </header>
 
-      {/* MENU MOBILE */}
       <div
         className={`mobile-menu-overlay ${isMobileMenuOpen ? "show" : ""}`}
         onClick={closeMobileMenu}
+        aria-hidden="true"
       />
 
-      <nav className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`} aria-label="Menu mobile">
+      <nav
+        id="mobile-navigation"
+        className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}
+        aria-label="Menu mobile"
+      >
         {NAV_ITEMS.map((item) => (
           <NavLink
             key={item.to}
