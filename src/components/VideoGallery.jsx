@@ -19,12 +19,12 @@ const videoGalleries = {
   },
 
   "ps2-san-michele-ghidini": {
-    title: "PS 2 San Michele Ghidini",
+    title: "PS 2 San Michele Palazzani",
     description: "Video ufficiale della prova speciale PS 2 San Michele Ghidini.",
     videos: [
       {
         id: "ps2-video",
-        title: "PS 2 San Michele Ghidini",
+        title: "PS 2 San Michele Palazzani",
         storagePath: "video/ps2-san-michele-ghidini.mp4",
       },
     ],
@@ -43,12 +43,12 @@ const videoGalleries = {
   },
 
   ps4: {
-    title: "PS 4 Capovalle Palazzani",
+    title: "PS 4 Capovalle Ghidini",
     description: "Video ufficiale della prova speciale PS 4 Capovalle Palazzani.",
     videos: [
       {
         id: "ps4-video",
-        title: "PS 4 Capovalle Palazzani",
+        title: "PS 4 Capovalle Ghidini",
         storagePath: "video/PS 4 Capovalle Palazzani .mp4",
       },
     ],

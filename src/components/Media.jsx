@@ -13,7 +13,7 @@ const videoFolders = [
   {
     id: "ps2",
     title: "PS 2",
-    subtitle: "San Michele Ghidini",
+    subtitle: "San Michele Palazzani",
     description: "Guarda il video della prova speciale.",
     path: "/media/video/ps2-san-michele-ghidini",
   },
@@ -27,7 +27,7 @@ const videoFolders = [
   {
     id: "ps4",
     title: "PS 4",
-    subtitle: "Capovalle Palazzani",
+    subtitle: "Capovalle Ghidini",
     description: "Guarda il video della prova speciale.",
     path: "/media/video/ps4",
   },
