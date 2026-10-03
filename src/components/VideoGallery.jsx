@@ -13,19 +13,19 @@ const videoGalleries = {
       {
         id: "ps1-video",
         title: "PS 1 Le Zette Moncini",
-        storagePath: "video/SPS 1 Le Zette Moncini.mp4",
+        storagePath: "video/SPS 1 le zette Gianni Moncini comp.mp4",
       },
     ],
   },
 
   "ps2-san-michele-ghidini": {
     title: "PS 2 San Michele Palazzani",
-    description: "Video ufficiale della prova speciale PS 2 San Michele Ghidini.",
+    description: "Video ufficiale della prova speciale PS 2 San Michele Palazzani.",
     videos: [
       {
         id: "ps2-video",
         title: "PS 2 San Michele Palazzani",
-        storagePath: "video/ps2-san-michele-ghidini.mp4",
+        storagePath: "video/PS 2 San Michele Vittorio Palazzani.mp4",
       },
     ],
   },
@@ -37,19 +37,19 @@ const videoGalleries = {
       {
         id: "ps3-video",
         title: "PS 3 Vobarno Lancini",
-        storagePath: "video/PS 3 Vobarno Lancini.mp4",
+        storagePath: "video/PS 3 Vobarno comp.mp4",
       },
     ],
   },
 
   ps4: {
     title: "PS 4 Capovalle Ghidini",
-    description: "Video ufficiale della prova speciale PS 4 Capovalle Palazzani.",
+    description: "Video ufficiale della prova speciale PS 4 Capovalle Ghidini.",
     videos: [
       {
         id: "ps4-video",
         title: "PS 4 Capovalle Ghidini",
-        storagePath: "video/PS 4 Capovalle Palazzani .mp4",
+        storagePath: "video/PS 4 Capovalle Sandro Ghidini.mp4",
       },
     ],
   },
@@ -61,7 +61,7 @@ const videoGalleries = {
       {
         id: "shakedown-video",
         title: "Shakedown Gaino Franzoni",
-        storagePath: "video/S.D. Gaino Franzoni.mp4",
+        storagePath: "video/S.d Gaino Franzoni comp.mp4",
       },
     ],
   },
