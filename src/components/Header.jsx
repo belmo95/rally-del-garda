@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { to: "/programma", label: "Programma" },
   { to: "/documenti", label: "Documenti" },
   { to: "/albo-di-gara", label: "Albo di gara" },
-  { to: "/media", label: "Media" },
+  { to: "/media", label: "Video PS" },
   { to: "/news", label: "News" },
   { to: "/strutture-convenzionate", label: "Strutture convenzionate" },
   { to: "/contatti", label: "Contatti" },
