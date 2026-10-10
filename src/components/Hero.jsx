@@ -8,6 +8,7 @@ export function Hero() {
   return (
     <section className="hero">
       <div className="hero-overlay" />
+
       <div className="hero-grid">
         <div className="hero-left-panel">
           <div className="hero-badge">26°</div>
@@ -40,15 +41,39 @@ export function Hero() {
 
             <div className="hero-program-grid">
               <div className="hero-program-col">
-                <p><strong>PARTENZA E ARRIVO</strong><br />Toscolano Maderno</p>
-                <p><strong>PARCO ASSISTENZA</strong><br />Toscolano Maderno</p>
-                <p><strong>RIORDINO NOTTURNO</strong><br />Salò</p>
+                <p>
+                  <strong>PARTENZA E ARRIVO</strong>
+                  <br />
+                  Toscolano Maderno
+                </p>
+                <p>
+                  <strong>PARCO ASSISTENZA</strong>
+                  <br />
+                  Toscolano Maderno
+                </p>
+                <p>
+                  <strong>RIORDINO NOTTURNO</strong>
+                  <br />
+                  Salò
+                </p>
               </div>
 
               <div className="hero-program-col">
-                <p><strong>7 PROVE SPECIALI</strong><br />per un totale di km 60</p>
-                <p><strong>DUE GIORNI DI GARA</strong><br />adrenalina pura</p>
-                <p><strong>SPETTACOLO, PASSIONE</strong><br />E TERRITORIO</p>
+                <p>
+                  <strong>7 PROVE SPECIALI</strong>
+                  <br />
+                  per un totale di km 60
+                </p>
+                <p>
+                  <strong>DUE GIORNI DI GARA</strong>
+                  <br />
+                  adrenalina pura
+                </p>
+                <p>
+                  <strong>SPETTACOLO, PASSIONE</strong>
+                  <br />
+                  E TERRITORIO
+                </p>
               </div>
             </div>
           </div>
@@ -63,7 +88,6 @@ export function Hero() {
             </h1>
           </div>
 
-          {/* Categorie come pulsanti */}
           <div className="hero-categories">
             <Link
               to="/documenti?cat=moderne"
@@ -71,12 +95,14 @@ export function Hero() {
             >
               RALLY NAZIONALE
             </Link>
+
             <Link
               to="/documenti?cat=storiche"
               className="hero-category hero-category-btn"
             >
               RALLY STORICO
             </Link>
+
             <Link
               to="/documenti?cat=regolarita-media50"
               className="hero-category hero-category-btn"
@@ -84,6 +110,15 @@ export function Hero() {
               RALLY REGOLARITÀ
             </Link>
           </div>
+
+          <a
+            href="https://www.cronocarservice.com/event/26-rally-del-garda/"
+            className="hero-category hero-category-btn hero-albo-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ALBO DI GARA UFFICIALE
+          </a>
 
           <div className="hero-car-stage">
             <img
@@ -98,14 +133,17 @@ export function Hero() {
               <span>SPORT</span>
               <small>Adrenalina e competizione</small>
             </div>
+
             <div className="hero-value">
               <span>PASSIONE</span>
               <small>La nostra forza da sempre</small>
             </div>
+
             <div className="hero-value">
               <span>TERRITORIO</span>
               <small>Valorizziamo il Lago di Garda</small>
             </div>
+
             <div className="hero-value">
               <span>EMOZIONE</span>
               <small>Un’esperienza unica</small>

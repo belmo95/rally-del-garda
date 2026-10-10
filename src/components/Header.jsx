@@ -8,7 +8,6 @@ const NAV_ITEMS = [
   { to: "/", label: "Home" },
   { to: "/programma", label: "Programma" },
   { to: "/documenti", label: "Documenti" },
-  { to: "/albo-di-gara", label: "Albo di gara" },
   { to: "/media", label: "Video PS" },
   { to: "/news", label: "News" },
   { to: "/strutture-convenzionate", label: "Strutture convenzionate" },

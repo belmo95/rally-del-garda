@@ -541,3 +541,16 @@
     width: 100%;
   }
 }
+.hero-albo-btn {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-albo-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
