@@ -1,14 +1,6 @@
-/* src/components/Hero.css */
-/* Art direction: locandina rally sportiva → racing/editoriale
-   Palette: blu notte + ciano + giallo gara
-   Typography: display condensata/sportiva simulata via uppercase + weight
-   Density: intensa ma ordinata
-*/
-
 :root {
   --bg-deep: #07111f;
   --bg-panel: rgba(9, 25, 48, 0.82);
-  --bg-panel-2: rgba(13, 34, 63, 0.92);
   --line-blue: #2ea7ff;
   --line-blue-soft: rgba(46, 167, 255, 0.35);
   --cyan: #11a8ff;
@@ -17,11 +9,9 @@
   --yellow-deep: #f1b400;
   --white: #f7fbff;
   --text-soft: rgba(231, 241, 255, 0.84);
-  --text-muted: rgba(203, 221, 241, 0.7);
-  --shadow-blue: 0 0 0 1px rgba(46, 167, 255, 0.22), 0 18px 48px rgba(0, 0, 0, 0.45);
-  --radius-lg: 24px;
+  --shadow-blue: 0 0 0 1px rgba(46, 167, 255, 0.22),
+    0 18px 48px rgba(0, 0, 0, 0.45);
   --radius-md: 16px;
-  --radius-sm: 12px;
 }
 
 .hero {
@@ -45,15 +35,24 @@
   background:
     radial-gradient(circle at 20% 20%, rgba(17, 168, 255, 0.18), transparent 28%),
     radial-gradient(circle at 80% 18%, rgba(255, 201, 40, 0.12), transparent 24%),
-    linear-gradient(135deg, transparent 0 74%, rgba(17, 168, 255, 0.08) 74% 76%, transparent 76% 100%);
+    linear-gradient(
+      135deg,
+      transparent 0 74%,
+      rgba(17, 168, 255, 0.08) 74% 76%,
+      transparent 76% 100%
+    );
   pointer-events: none;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(4, 8, 16, 0.38) 0%, transparent 28%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(4, 8, 16, 0.38) 0%,
+    transparent 28%,
+    transparent 100%
+  );
   pointer-events: none;
 }
 
@@ -77,12 +76,96 @@
 }
 
 .hero-left-panel {
+  grid-column: 1;
+  grid-row: 1;
   padding: 18px;
   border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(10, 29, 56, 0.88), rgba(7, 18, 36, 0.92));
+  background: linear-gradient(
+    180deg,
+    rgba(10, 29, 56, 0.88),
+    rgba(7, 18, 36, 0.92)
+  );
   border: 1px solid var(--line-blue-soft);
   box-shadow: var(--shadow-blue);
+}
+
+.hero-right-panel {
+  grid-column: 2;
+  grid-row: 1;
+  justify-content: space-between;
+  padding: 12px 4px 0;
+}
+
+.hero-news-alert {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: start;
+  align-self: start;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 12px 4px 0;
+  padding: 0.85rem 1.1rem;
+  color: #fff;
+  background: #c62828;
+  border: 2px solid #fff;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+  animation: hero-news-pulse 1.8s ease-in-out infinite;
+}
+
+.hero-news-alert:hover {
+  background: #a91f1f;
+  animation: none;
+}
+
+.hero-news-alert:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.hero-news-copy {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.hero-news-alert strong {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.hero-news-copy > span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.hero-news-dot {
+  flex: 0 0 0.7rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.hero-news-arrow {
+  margin-left: 0.35rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+@keyframes hero-news-pulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+  }
+
+  50% {
+    box-shadow: 0 4px 22px rgb(198 40 40 / 65%);
+  }
 }
 
 .hero-badge {
@@ -108,8 +191,11 @@
   padding: 32px 20px 20px;
   margin-top: 42px;
   border-radius: 30px;
-  background:
-    linear-gradient(145deg, rgba(20, 44, 88, 0.96), rgba(12, 24, 50, 0.96));
+  background: linear-gradient(
+    145deg,
+    rgba(20, 44, 88, 0.96),
+    rgba(12, 24, 50, 0.96)
+  );
   border: 2px solid rgba(93, 190, 255, 0.5);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.04),
@@ -122,8 +208,16 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0 20%, transparent 20% 100%),
-    linear-gradient(45deg, transparent 0 72%, rgba(17, 168, 255, 0.08) 72% 100%);
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03) 0 20%,
+      transparent 20% 100%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 0 72%,
+      rgba(17, 168, 255, 0.08) 72% 100%
+    );
   pointer-events: none;
 }
 
@@ -138,17 +232,18 @@
 }
 
 .hero-logo-image {
+  display: block;
   width: min(100%, 520px);
   margin: 0 auto;
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.45));
 }
 
 .hero-org-strip {
-  margin-top: 10px;
   display: flex;
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .hero-org-strip span {
@@ -156,8 +251,8 @@
   border-radius: 10px;
   background: linear-gradient(180deg, #f4f7fb, #dce4ee);
   color: #1c2430;
-  font-weight: 900;
   font-size: 0.95rem;
+  font-weight: 900;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -179,11 +274,12 @@
 }
 
 .hero-icon-circle {
+  display: grid;
+  flex: 0 0 52px;
   width: 52px;
   height: 52px;
-  border-radius: 999px;
-  display: grid;
   place-items: center;
+  border-radius: 999px;
   background: rgba(17, 168, 255, 0.14);
   border: 1px solid rgba(56, 196, 255, 0.45);
   font-size: 1.35rem;
@@ -213,7 +309,7 @@
   justify-content: space-between;
   gap: 14px;
   padding: 14px 18px;
-  border: 1px solid rgba(255, 201, 40, 0.5);
+  border-color: rgba(255, 201, 40, 0.5);
 }
 
 .hero-register-label {
@@ -272,13 +368,9 @@
   letter-spacing: 0.04em;
 }
 
-.hero-right-panel {
-  justify-content: space-between;
-  padding: 12px 4px 0;
-}
-
 .hero-top-copy {
   max-width: 760px;
+  padding-top: 76px;
 }
 
 .hero-kicker {
@@ -322,6 +414,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  text-decoration: none;
 }
 
 .hero-car-stage {
@@ -352,6 +445,13 @@
   filter:
     drop-shadow(0 30px 35px rgba(0, 0, 0, 0.45))
     drop-shadow(0 0 24px rgba(28, 138, 255, 0.14));
+}
+
+.hero-albo-btn {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-values {
@@ -396,6 +496,9 @@
 
 .btn-primary,
 .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 52px;
   padding: 14px 28px;
   border-radius: 999px;
@@ -403,9 +506,6 @@
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   text-decoration: none;
   cursor: pointer;
 }
@@ -438,10 +538,29 @@
 @media (max-width: 1180px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "news"
+      "left"
+      "right";
+  }
+
+  .hero-news-alert {
+    grid-area: news;
+    justify-self: start;
+    margin: 0;
+  }
+
+  .hero-left-panel {
+    grid-area: left;
   }
 
   .hero-right-panel {
+    grid-area: right;
     padding: 0;
+  }
+
+  .hero-top-copy {
+    padding-top: 0;
   }
 
   .hero-car-stage {
@@ -459,6 +578,21 @@
     min-height: auto;
     padding: 22px 14px 36px;
     background-attachment: scroll;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "news"
+      "left"
+      "right";
+    gap: 18px;
+  }
+
+  .hero-news-alert {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
   }
 
   .hero-left-panel {
@@ -515,8 +649,13 @@
 
   .hero-category {
     width: 100%;
+    box-sizing: border-box;
     text-align: center;
     font-size: 0.88rem;
+  }
+
+  .hero-albo-btn {
+    width: 100%;
   }
 
   .hero-car-stage {
@@ -539,18 +678,12 @@
   .btn-primary,
   .btn-secondary {
     width: 100%;
+    box-sizing: border-box;
   }
 }
-.hero-albo-btn {
-  display: flex;
-  width: fit-content;
-  justify-content: center;
-  text-align: center;
-}
 
-@media (max-width: 768px) {
-  .hero-albo-btn {
-    width: 100%;
-    box-sizing: border-box;
+@media (prefers-reduced-motion: reduce) {
+  .hero-news-alert {
+    animation: none;
   }
 }

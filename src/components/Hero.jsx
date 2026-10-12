@@ -1,4 +1,3 @@
-// src/components/Hero.jsx
 import { Link } from "react-router-dom";
 import "./Hero.css";
 import logoRally from "../assets/Rally Del Garda targa.png";
@@ -10,12 +9,23 @@ export function Hero() {
       <div className="hero-overlay" />
 
       <div className="hero-grid">
+        {/* Primo nella struttura per comparire in cima su telefono */}
+        <Link to="/news" className="hero-news-alert">
+          <span className="hero-news-dot" aria-hidden="true" />
+          <span className="hero-news-copy">
+            <strong>IMPORTANTE</strong>
+            <span>Comunicazione del 12-10-2026</span>
+          </span>
+          <span className="hero-news-arrow" aria-hidden="true">
+            →
+          </span>
+        </Link>
+
         <div className="hero-left-panel">
           <div className="hero-badge">26°</div>
 
           <div className="hero-logo-card">
             <div className="hero-logo-top">memorial Renato Pasquali</div>
-
             <img
               src={logoRally}
               alt="Logo Rally del Garda"
@@ -24,7 +34,9 @@ export function Hero() {
           </div>
 
           <div className="hero-date-card">
-            <div className="hero-icon-circle">📅</div>
+            <div className="hero-icon-circle" aria-hidden="true">
+              📅
+            </div>
             <div>
               <p className="hero-date-main">31 OTTOBRE - 1 NOVEMBRE 2026</p>
               <p className="hero-date-sub">TOSCOLANO MADERNO (BS)</p>

@@ -1,5 +1,3 @@
-// src/components/News.jsx
-
 import mappaUrl from "../assets/mappa-gara.pdf";
 import "./News.css";
 
@@ -14,7 +12,24 @@ export function News() {
         </div>
       </div>
 
-      {/* Mappa della gara come prima news */}
+      {/* Comunicazione importante */}
+      <article className="news-item news-important">
+        <a
+          className="news-important-link"
+          href="/ISCRIZIONI%2026%20RALLY%20DEL%20GARDA.docx"
+          download="ISCRIZIONI 26 RALLY DEL GARDA.docx"
+        >
+          <span className="news-important-dot" aria-hidden="true" />
+          <span>
+            <span className="news-important-title">
+              Comunicazione del 12-10-2026
+            </span>
+            <span className="news-important-label">Importante</span>
+          </span>
+        </a>
+      </article>
+
+      {/* Mappa della gara */}
       <div className="news-mappa-section">
         <h3 className="news-mappa-title">Mappa della gara</h3>
         <p className="news-mappa-desc">
