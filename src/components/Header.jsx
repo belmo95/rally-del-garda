@@ -8,9 +8,13 @@ const NAV_ITEMS = [
   { to: "/", label: "Home" },
   { to: "/programma", label: "Programma" },
   { to: "/documenti", label: "Documenti" },
+  { to: "/accrediti", label: "Accrediti" },
   { to: "/media", label: "Video PS" },
   { to: "/news", label: "News" },
-  { to: "/strutture-convenzionate", label: "Strutture convenzionate" },
+  {
+    to: "/strutture-convenzionate",
+    label: "Strutture convenzionate",
+  },
   { to: "/contatti", label: "Contatti" },
 ];
 
@@ -38,7 +42,10 @@ export function Header() {
             <img src={headerLogo} alt="Rally del Garda" />
           </NavLink>
 
-          <nav className="header-nav-desktop" aria-label="Menu principale">
+          <nav
+            className="header-nav-desktop"
+            aria-label="Menu principale"
+          >
             {NAV_ITEMS.map((item) => (
               <NavLink
                 key={item.to}
@@ -53,10 +60,14 @@ export function Header() {
 
           <div className="header-right">
             <button
-              className={`hamburger-btn ${isMobileMenuOpen ? "open" : ""}`}
+              className={`hamburger-btn ${
+                isMobileMenuOpen ? "open" : ""
+              }`}
               type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              aria-label={isMobileMenuOpen ? "Chiudi menu" : "Apri menu"}
+              aria-label={
+                isMobileMenuOpen ? "Chiudi menu" : "Apri menu"
+              }
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-navigation"
             >
@@ -69,14 +80,18 @@ export function Header() {
       </header>
 
       <div
-        className={`mobile-menu-overlay ${isMobileMenuOpen ? "show" : ""}`}
+        className={`mobile-menu-overlay ${
+          isMobileMenuOpen ? "show" : ""
+        }`}
         onClick={closeMobileMenu}
         aria-hidden="true"
       />
 
       <nav
         id="mobile-navigation"
-        className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}
+        className={`mobile-menu ${
+          isMobileMenuOpen ? "open" : ""
+        }`}
         aria-label="Menu mobile"
       >
         {NAV_ITEMS.map((item) => (

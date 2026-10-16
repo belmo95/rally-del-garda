@@ -1,0 +1,929 @@
+/* src/components/Accrediti.css */
+
+.accrediti-page {
+  --acc-bg-deep: #07111f;
+  --acc-bg-panel: rgba(9, 25, 48, 0.82);
+  --acc-line-blue: #2ea7ff;
+  --acc-line-blue-soft: rgba(46, 167, 255, 0.35);
+  --acc-cyan: #11a8ff;
+  --acc-cyan-2: #38c4ff;
+  --acc-yellow: #ffc928;
+  --acc-yellow-deep: #f1b400;
+  --acc-white: #f7fbff;
+  --acc-text-soft: rgba(231, 241, 255, 0.84);
+  --acc-shadow-blue:
+    0 0 0 1px rgba(46, 167, 255, 0.22),
+    0 18px 48px rgba(0, 0, 0, 0.45);
+  --acc-radius-md: 16px;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  padding-bottom: 12px;
+  color: var(--acc-white);
+  background: var(--acc-bg-deep);
+  font-family: inherit;
+  line-height: 1.65;
+}
+
+/* Reset limitato alla pagina */
+
+.accrediti-page,
+.accrediti-page *,
+.accrediti-page *::before,
+.accrediti-page *::after {
+  box-sizing: border-box;
+}
+
+.accrediti-page h1,
+.accrediti-page h2,
+.accrediti-page h3,
+.accrediti-page p {
+  margin: 0;
+}
+
+.accrediti-page a {
+  text-underline-offset: 4px;
+}
+
+.accrediti-page a:focus-visible {
+  outline: 3px solid var(--acc-yellow);
+  outline-offset: 5px;
+}
+
+.accrediti-container {
+  width: min(1380px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.accrediti-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 100px;
+  color: var(--acc-white);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 12, 23, 0.55),
+      rgba(4, 10, 18, 0.9)
+    ),
+    linear-gradient(
+      120deg,
+      rgba(5, 17, 31, 0.92),
+      rgba(8, 24, 45, 0.88)
+    ),
+    url("../assets/rally-big.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.accrediti-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(17, 168, 255, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 18%,
+      rgba(255, 201, 40, 0.12),
+      transparent 24%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0 74%,
+      rgba(17, 168, 255, 0.08) 74% 76%,
+      transparent 76% 100%
+    );
+  pointer-events: none;
+}
+
+.accrediti-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 8, 16, 0.38) 0%,
+    transparent 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.accrediti-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.accrediti-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 9px 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(56, 196, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(6, 18, 33, 0.84);
+  color: var(--acc-white);
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+.accrediti-page .accrediti-hero h1 {
+  max-width: 1000px;
+  color: var(--acc-white);
+  font-size: clamp(2.5rem, 5.8vw, 5.2rem);
+  font-weight: 1000;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  overflow-wrap: break-word;
+}
+
+.accrediti-page .accrediti-hero-subtitle {
+  max-width: 740px;
+  margin-top: 22px;
+  color: var(--acc-text-soft);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.accrediti-event-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 30px;
+}
+
+.accrediti-event-details span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  padding: 11px 17px;
+  border: 1px solid rgba(46, 167, 255, 0.35);
+  border-radius: 12px;
+  background: rgba(9, 25, 48, 0.82);
+  color: var(--acc-white);
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+.accrediti-event-details span::before {
+  content: "";
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--acc-cyan-2);
+  box-shadow: 0 0 12px rgba(56, 196, 255, 0.55);
+}
+
+/* ========================================
+   PULSANTI
+======================================== */
+
+.accrediti-page .accrediti-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  max-width: 100%;
+  min-height: 54px;
+  padding: 15px 28px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: 0.065em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.accrediti-button svg {
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+}
+
+.accrediti-page .accrediti-button--primary,
+.accrediti-page .accrediti-button--secondary {
+  color: #111827;
+  background: linear-gradient(
+    180deg,
+    #ffd84d,
+    var(--acc-yellow-deep)
+  );
+  border-color: rgba(255, 216, 77, 0.5);
+  box-shadow:
+    0 16px 34px rgba(255, 201, 40, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.accrediti-page .accrediti-button--primary:hover,
+.accrediti-page .accrediti-button--secondary:hover {
+  color: #111827;
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 18px 38px rgba(255, 201, 40, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================
+   CONTENUTO E SCADENZA
+======================================== */
+
+.accrediti-content {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 48px;
+}
+
+.accrediti-deadline {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 30px;
+  margin-top: -38px;
+  border: 1px solid rgba(255, 201, 40, 0.5);
+  border-left: 5px solid var(--acc-yellow);
+  border-radius: var(--acc-radius-md);
+  background: linear-gradient(
+    135deg,
+    rgba(27, 34, 43, 0.98),
+    rgba(9, 25, 48, 0.98)
+  );
+  box-shadow:
+    0 0 0 1px rgba(255, 201, 40, 0.08),
+    0 18px 48px rgba(0, 0, 0, 0.4);
+}
+
+.accrediti-deadline-label {
+  margin-bottom: 8px;
+  color: var(--acc-yellow);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.accrediti-page .accrediti-deadline h2 {
+  color: var(--acc-white);
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+.accrediti-page .accrediti-deadline p {
+  max-width: 1000px;
+  margin-top: 12px;
+  color: var(--acc-text-soft);
+  font-size: 0.96rem;
+}
+
+/* ========================================
+   TITOLI DELLE SEZIONI
+======================================== */
+
+.accrediti-section {
+  margin-top: 56px;
+}
+
+.accrediti-section-heading {
+  max-width: 900px;
+  margin-bottom: 26px;
+}
+
+.accrediti-kicker {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 7px 13px;
+  margin-bottom: 13px;
+  border: 1px solid rgba(56, 196, 255, 0.3);
+  border-radius: 9px;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 168, 255, 0.2),
+    rgba(27, 104, 255, 0.16)
+  );
+  color: var(--acc-cyan-2);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.accrediti-page .accrediti-section-heading h2 {
+  color: var(--acc-white);
+  font-size: clamp(1.65rem, 3vw, 2.55rem);
+  font-weight: 1000;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.accrediti-page .accrediti-section-heading p {
+  max-width: 800px;
+  margin-top: 15px;
+  color: var(--acc-text-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ========================================
+   PROCEDURA
+======================================== */
+
+.accrediti-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.accrediti-step {
+  position: relative;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--acc-line-blue-soft);
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 29, 56, 0.88),
+    rgba(7, 18, 36, 0.92)
+  );
+  box-shadow: var(--acc-shadow-blue);
+}
+
+.accrediti-step-number {
+  display: inline-grid;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  place-items: center;
+  border: 1px solid rgba(56, 196, 255, 0.45);
+  border-radius: 14px;
+  background: rgba(17, 168, 255, 0.14);
+  color: var(--acc-cyan-2);
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.accrediti-page .accrediti-step h3 {
+  margin-bottom: 12px;
+  color: var(--acc-white);
+  font-size: 1.02rem;
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.accrediti-page .accrediti-step p {
+  color: var(--acc-text-soft);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   DOCUMENTI E REQUISITI
+======================================== */
+
+.accrediti-documents-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+}
+
+.accrediti-card {
+  position: relative;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--acc-line-blue-soft);
+  border-radius: 22px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 29, 56, 0.88),
+    rgba(7, 18, 36, 0.92)
+  );
+  box-shadow: var(--acc-shadow-blue);
+}
+
+.accrediti-card-tag {
+  display: inline-block;
+  max-width: 100%;
+  padding: 7px 13px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(56, 196, 255, 0.35);
+  border-radius: 9px;
+  background: linear-gradient(
+    135deg,
+    var(--acc-cyan),
+    #1b68ff
+  );
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(17, 104, 255, 0.15);
+}
+
+.accrediti-page .accrediti-card h3 {
+  margin-bottom: 17px;
+  color: var(--acc-white);
+  font-size: 1.16rem;
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+.accrediti-page .accrediti-card p,
+.accrediti-page .accrediti-card li {
+  color: var(--acc-text-soft);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.accrediti-page .accrediti-card p + p {
+  margin-top: 15px;
+}
+
+.accrediti-card ul {
+  padding-left: 21px;
+  margin: 16px 0;
+}
+
+.accrediti-card li {
+  padding-left: 3px;
+}
+
+.accrediti-card li + li {
+  margin-top: 12px;
+}
+
+.accrediti-card li::marker {
+  color: var(--acc-cyan-2);
+}
+
+.accrediti-page .accrediti-card-note {
+  padding-top: 17px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(46, 167, 255, 0.22);
+  color: rgba(231, 241, 255, 0.74);
+  font-size: 0.86rem;
+}
+
+.accrediti-inline-notice {
+  padding: 16px;
+  margin-top: 24px;
+  border: 1px solid rgba(255, 201, 40, 0.3);
+  border-left: 3px solid var(--acc-yellow);
+  border-radius: 10px;
+  background: rgba(255, 201, 40, 0.07);
+  color: #ffe49a;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+/* ========================================
+   PASS E REGOLAMENTO
+======================================== */
+
+.accrediti-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.accrediti-rule {
+  min-width: 0;
+  padding: 26px 28px;
+  border: 1px solid rgba(46, 167, 255, 0.26);
+  border-radius: 18px;
+  background: rgba(8, 22, 40, 0.78);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.accrediti-page .accrediti-rule h3 {
+  margin-bottom: 13px;
+  color: var(--acc-cyan-2);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.accrediti-page .accrediti-rule p {
+  color: var(--acc-text-soft);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.accrediti-page .accrediti-rule p + p {
+  margin-top: 13px;
+}
+
+/* ========================================
+   INVIO DELLA DOMANDA
+======================================== */
+
+.accrediti-submit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  padding: 36px;
+  margin-top: 56px;
+  border: 1px solid rgba(255, 201, 40, 0.42);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at 95% 15%,
+      rgba(255, 201, 40, 0.08),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(20, 44, 88, 0.96),
+      rgba(12, 24, 50, 0.96)
+    );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 0 28px rgba(32, 147, 255, 0.1),
+    0 18px 48px rgba(0, 0, 0, 0.35);
+}
+
+.accrediti-submit-copy {
+  flex: 1;
+  min-width: 0;
+  max-width: 760px;
+}
+
+.accrediti-submit .accrediti-kicker {
+  border-color: rgba(255, 201, 40, 0.3);
+  background: rgba(255, 201, 40, 0.08);
+  color: var(--acc-yellow);
+}
+
+.accrediti-page .accrediti-submit h2 {
+  color: var(--acc-white);
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 1000;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.accrediti-page .accrediti-submit p {
+  margin-top: 16px;
+  color: var(--acc-text-soft);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.accrediti-page .accrediti-email {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 18px;
+  color: var(--acc-cyan-2);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.accrediti-page .accrediti-email:hover {
+  color: var(--acc-yellow);
+  text-decoration: underline;
+}
+
+.accrediti-submit-actions {
+  display: flex;
+  flex: 0 1 340px;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.accrediti-submit-actions .accrediti-button {
+  width: 100%;
+}
+
+.accrediti-page .accrediti-preview-link {
+  display: inline-block;
+  max-width: 100%;
+  color: var(--acc-text-soft);
+  font-size: 0.87rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.accrediti-page .accrediti-preview-link:hover {
+  color: var(--acc-cyan-2);
+}
+
+/* ========================================
+   NOTA FINALE
+======================================== */
+
+.accrediti-page .accrediti-footer-note {
+  max-width: 940px;
+  padding-top: 24px;
+  margin: 28px auto 0;
+  border-top: 1px solid rgba(46, 167, 255, 0.16);
+  color: rgba(231, 241, 255, 0.68);
+  font-size: 0.86rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* ========================================
+   TABLET E SCHERMI INTERMEDI
+======================================== */
+
+@media (max-width: 1180px) {
+  .accrediti-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .accrediti-documents-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .accrediti-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .accrediti-submit {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .accrediti-submit-copy {
+    max-width: 100%;
+  }
+
+  .accrediti-submit-actions {
+    flex: none;
+    align-items: flex-start;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .accrediti-submit-actions .accrediti-button {
+    width: auto;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  .accrediti-page {
+    padding-bottom: 0;
+  }
+
+  .accrediti-container {
+    width: calc(100% - 28px);
+  }
+
+  .accrediti-hero {
+    padding: 34px 0 72px;
+    background-attachment: scroll;
+  }
+
+  .accrediti-eyebrow {
+    padding: 8px 13px;
+    margin-bottom: 18px;
+    font-size: 0.78rem;
+  }
+
+  .accrediti-page .accrediti-hero h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .accrediti-page .accrediti-hero-subtitle {
+    margin-top: 18px;
+    font-size: 1rem;
+  }
+
+  .accrediti-event-details {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+    margin-bottom: 24px;
+  }
+
+  .accrediti-event-details span {
+    justify-content: center;
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .accrediti-hero .accrediti-button {
+    width: 100%;
+  }
+
+  .accrediti-page .accrediti-button {
+    min-height: 54px;
+    padding: 14px 18px;
+    font-size: 0.84rem;
+    letter-spacing: 0.045em;
+  }
+
+  .accrediti-deadline {
+    padding: 22px 18px;
+    margin-top: -32px;
+    border-radius: 14px;
+  }
+
+  .accrediti-deadline-label {
+    font-size: 0.73rem;
+  }
+
+  .accrediti-page .accrediti-deadline h2 {
+    font-size: clamp(1.12rem, 4.8vw, 1.45rem);
+    line-height: 1.35;
+  }
+
+  .accrediti-page .accrediti-deadline p {
+    font-size: 0.93rem;
+  }
+
+  .accrediti-section {
+    margin-top: 40px;
+  }
+
+  .accrediti-section-heading {
+    margin-bottom: 22px;
+  }
+
+  .accrediti-kicker {
+    padding: 7px 11px;
+    font-size: 0.7rem;
+  }
+
+  .accrediti-page .accrediti-section-heading h2 {
+    font-size: clamp(1.5rem, 6.2vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .accrediti-page .accrediti-section-heading p {
+    margin-top: 13px;
+    font-size: 0.95rem;
+  }
+
+  .accrediti-steps,
+  .accrediti-documents-grid,
+  .accrediti-rules-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .accrediti-card:last-child {
+    grid-column: auto;
+  }
+
+  .accrediti-step,
+  .accrediti-card,
+  .accrediti-rule {
+    padding: 22px 20px;
+    border-radius: 18px;
+  }
+
+  .accrediti-step-number {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+
+  .accrediti-page .accrediti-step h3 {
+    font-size: 1rem;
+  }
+
+  .accrediti-card-tag {
+    margin-bottom: 17px;
+  }
+
+  .accrediti-page .accrediti-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .accrediti-page .accrediti-rule h3 {
+    font-size: 0.97rem;
+  }
+
+  .accrediti-submit {
+    gap: 26px;
+    padding: 26px 20px;
+    margin-top: 40px;
+    border-radius: 20px;
+  }
+
+  .accrediti-page .accrediti-submit h2 {
+    font-size: clamp(1.4rem, 5.8vw, 1.9rem);
+  }
+
+  .accrediti-page .accrediti-submit p {
+    font-size: 0.95rem;
+  }
+
+  .accrediti-submit-actions {
+    align-items: center;
+    width: 100%;
+  }
+
+  .accrediti-submit-actions .accrediti-button {
+    width: 100%;
+  }
+
+  .accrediti-page .accrediti-email {
+    font-size: clamp(0.95rem, 4.3vw, 1.15rem);
+  }
+
+  .accrediti-page .accrediti-footer-note {
+    padding-top: 20px;
+    margin-top: 24px;
+    font-size: 0.81rem;
+  }
+
+  .accrediti-content {
+    padding-bottom: 32px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITÀ: MOVIMENTO RIDOTTO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .accrediti-page .accrediti-button,
+  .accrediti-page .accrediti-email,
+  .accrediti-page .accrediti-preview-link {
+    transition: none;
+  }
+
+  .accrediti-page .accrediti-button:hover {
+    transform: none;
+  }
+}

@@ -19,7 +19,7 @@ import { TerminiCondizioni } from "./components/TerminiCondizioni";
 import { NotFound } from "./components/NotFound";
 import { Seo } from "./components/Seo";
 import { CookieBanner } from "./components/CookieBanner";
-
+import Accrediti from "./components/Accrediti";
 function App() {
   return (
     <div className="app">
@@ -124,7 +124,7 @@ function App() {
               </div>
             }
           />
-
+<Route path="/accrediti" element={<Accrediti />} />
           <Route
             path="/strutture-convenzionate"
             element={
