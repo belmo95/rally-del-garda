@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
 import "./Hero.css";
 import logoRally from "../assets/Rally Del Garda targa.png";
 import rallyCarImage from "../assets/rally-car.jpg";
+import elencoIscrittiPdf from "../assets/ELENCO_ISCRITTI_RALLY_COMPLETO.pdf";
+
 
 
 export function Hero() {
@@ -10,43 +11,32 @@ export function Hero() {
       <div className="hero-overlay" />
 
 
+
       <div className="hero-grid">
         {/* Primo nella struttura per comparire in cima su telefono */}
         <div className="hero-alerts">
-          <Link to="/news" className="hero-news-alert">
+          <a
+            href={elencoIscrittiPdf}
+            className="hero-news-alert"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="hero-news-dot" aria-hidden="true" />
             <span className="hero-news-copy">
               <strong>IMPORTANTE</strong>
-              <span>Comunicazione del 12-10-2026</span>
+              <span>ELENCO ISCRITTI UFFICIALE</span>
             </span>
             <span className="hero-news-arrow" aria-hidden="true">
               →
             </span>
-          </Link>
-
-
-          <Link to="/programma" className="hero-program-alert">
-            <span className="hero-program-alert-icon" aria-hidden="true">
-              ⚠️
-            </span>
-            <span className="hero-news-copy">
-              <strong>IMPORTANTE</strong>
-              <span>Variato programma delle manifestazioni</span>
-            </span>
-            <span className="hero-news-arrow" aria-hidden="true">
-              →
-            </span>
-          </Link>
-
-
-          <p className="hero-deadline-alert">
-            TERMINE ISCRIZIONE 18 ottobre 2026
-          </p>
+          </a>
         </div>
+
 
 
         <div className="hero-left-panel">
           <div className="hero-badge">26°</div>
+
 
 
           <div className="hero-logo-card">
@@ -57,6 +47,7 @@ export function Hero() {
               className="hero-logo-image"
             />
           </div>
+
 
 
           <div className="hero-date-card">
@@ -70,14 +61,17 @@ export function Hero() {
           </div>
 
 
+
           <div className="hero-register-card">
             <span className="hero-register-label">ISCRIZIONI APERTE DAL:</span>
             <span className="hero-register-date">1/10/2026</span>
           </div>
 
 
+
           <div className="hero-program-card">
             <div className="hero-program-title">PROGRAMMA</div>
+
 
 
             <div className="hero-program-grid">
@@ -98,6 +92,7 @@ export function Hero() {
                   Salò
                 </p>
               </div>
+
 
 
               <div className="hero-program-col">
@@ -122,6 +117,7 @@ export function Hero() {
         </div>
 
 
+
         <div className="hero-right-panel">
           <div className="hero-top-copy">
             <p className="hero-kicker">DUE GIORNI DI SPETTACOLO</p>
@@ -132,30 +128,34 @@ export function Hero() {
           </div>
 
 
+
           <div className="hero-categories">
-            <Link
-              to="/documenti?cat=moderne"
+            <a
+              href="/documenti?cat=moderne"
               className="hero-category hero-category-btn"
             >
               RALLY NAZIONALE
-            </Link>
+            </a>
 
 
-            <Link
-              to="/documenti?cat=storiche"
+
+            <a
+              href="/documenti?cat=storiche"
               className="hero-category hero-category-btn"
             >
               RALLY STORICO
-            </Link>
+            </a>
 
 
-            <Link
-              to="/documenti?cat=regolarita-media50"
+
+            <a
+              href="/documenti?cat=regolarita-media50"
               className="hero-category hero-category-btn"
             >
               RALLY REGOLARITÀ
-            </Link>
+            </a>
           </div>
+
 
 
           <a
@@ -168,6 +168,7 @@ export function Hero() {
           </a>
 
 
+
           <div className="hero-car-stage">
             <img
               src={rallyCarImage}
@@ -177,11 +178,13 @@ export function Hero() {
           </div>
 
 
+
           <div className="hero-values">
             <div className="hero-value">
               <span>SPORT</span>
               <small>Adrenalina e competizione</small>
             </div>
+
 
 
             <div className="hero-value">
@@ -190,10 +193,12 @@ export function Hero() {
             </div>
 
 
+
             <div className="hero-value">
               <span>TERRITORIO</span>
               <small>Valorizziamo il Lago di Garda</small>
             </div>
+
 
 
             <div className="hero-value">
@@ -203,15 +208,17 @@ export function Hero() {
           </div>
 
 
+
           <div className="hero-actions">
-            <Link className="btn-primary" to="/documenti">
+            <a href="/documenti" className="btn-primary">
               Iscriviti ora
-            </Link>
+            </a>
 
 
-            <Link className="btn-secondary" to="/documenti">
+
+            <a href="/documenti" className="btn-secondary">
               Regolamento
-            </Link>
+            </a>
           </div>
         </div>
       </div>

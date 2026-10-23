@@ -1,8 +1,10 @@
 // src/components/Documenti.jsx
 
+
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Documenti.css";
+
 
 // Import dei PDF – Moderne
 import moderne_RPG from "../assets/documenti/moderne/RPG.pdf";
@@ -15,16 +17,22 @@ import dichiarazione_storico_classifiche_speciali_e_2_spazi_assistenza from "../
 import utilizzo_camera_car from "../assets/documenti/moderne/UTILIZZO CAMERA CAR.pdf";
 import tdt_garda26_moderno from "../assets/documenti/moderne/_TDT_GARDA26_MODERNO.pdf";
 import Cartina_generale from "../assets/documenti/moderne/mappa-gara.pdf";
+import elenco_iscritti_moderno from "../assets/documenti/moderne/ELENCO_ISCRITTI_MODERNO.pdf";
+
 // Import dei PDF – Storiche
 import storiche_modulo from "../assets/documenti/storiche/SCHEDA ISCRIZIONE RALLY STORICO.pdf";
 import storiche_rpg_classico from "../assets/documenti/storiche/RPG STORICO E CLASSICO.pdf";
 import tdt_garda26_storico from "../assets/documenti/storiche/_TDT_GARDA26_STORICO.pdf";
 import mappa_gara from "../assets/documenti/storiche/mappa-gara.pdf";
+import elenco_iscritti_storico from "../assets/documenti/storiche/ELENCO_ISCRITTI_STORICO.pdf";
+
 // Import dei PDF – Regolarità Media50
 import regolarita_documento_1 from "../assets/documenti/regolarita/RALLY DEL GARDA.pdf";
 import regolarita_modulo from "../assets/documenti/regolarita/SCHEDA ISCRIZIONE REGOLARITA.pdf";
-import tdt_garda26_regolarita from "../assets/documenti/regolarita/_TDT_GARDA26_REGOLARITÀ.pdf";
+import tdt_garda26_regolarita from "../assets/documenti/regolarita/_TDT_GARDA26_REGOLARITA.pdf";
 import mappa_gara1 from "../assets/documenti/storiche/mappa-gara.pdf";
+import elenco_iscritti_regolarita from "../assets/documenti/regolarita/ELENCO_ISCRITTI_REGOLARITA.pdf";
+
 const discipline = [
   {
     id: "moderne",
@@ -82,7 +90,11 @@ const discipline = [
         file: Cartina_generale,
         format: "PDF",
       },
-
+      {
+        title: "Elenco iscritti – Moderne",
+        file: elenco_iscritti_moderno,
+        format: "PDF",
+      },
     ],
   },
   {
@@ -90,7 +102,7 @@ const discipline = [
     label: "Storiche",
     description: "Documenti relativi alle vetture storiche.",
     documents: [
-        {
+      {
         title: "RPG Storico e Classico",
         file: storiche_rpg_classico,
         format: "PDF",
@@ -100,15 +112,19 @@ const discipline = [
         file: storiche_modulo,
         format: "PDF",
       },
-    
       {
         title: "TDT Garda 2026 – Storico",
         file: tdt_garda26_storico,
         format: "PDF",
       },
-         {
+      {
         title: "Cartina Generale",
         file: mappa_gara,
+        format: "PDF",
+      },
+      {
+        title: "Elenco iscritti – Storiche",
+        file: elenco_iscritti_storico,
         format: "PDF",
       },
     ],
@@ -133,21 +149,29 @@ const discipline = [
         file: tdt_garda26_regolarita,
         format: "PDF",
       },
-       {
+      {
         title: "Cartina Generale",
         file: mappa_gara1,
+        format: "PDF",
+      },
+      {
+        title: "Elenco iscritti – Regolarità",
+        file: elenco_iscritti_regolarita,
         format: "PDF",
       },
     ],
   },
 ];
 
+
 export function Documenti() {
   const [searchParams] = useSearchParams();
   const [categoriaAttiva, setCategoriaAttiva] = useState(null);
 
+
   useEffect(() => {
     const cat = searchParams.get("cat");
+
 
     if (cat && ["moderne", "storiche", "regolarita-media50"].includes(cat)) {
       setCategoriaAttiva(cat);
@@ -157,26 +181,32 @@ export function Documenti() {
     }
   }, [searchParams]);
 
+
   // Se vuoi mostrare subito i documenti, metti true
   const documentiDisponibili = true;
+
 
   // Filtra le discipline in base alla categoria selezionata
   const disciplineDaMostrare = categoriaAttiva
     ? discipline.filter((d) => d.id === categoriaAttiva)
     : discipline;
 
+
   return (
     <section className="page-section documenti" id="documenti">
       <div className="documenti-header">
         <span className="documenti-label">Rally del Garda</span>
 
+
         <h1>Documenti</h1>
+
 
         <p>
           Seleziona la disciplina per consultare i documenti ufficiali della
           gara.
         </p>
       </div>
+
 
       {/* Griglia categorie */}
       <div className="documenti-grid">
@@ -196,11 +226,13 @@ export function Documenti() {
                   : "🔒"}
               </span>
 
+
               <div>
                 <h3>{categoria.label}</h3>
                 <p>{categoria.description}</p>
               </div>
             </div>
+
 
             {categoria.documents.length > 0 && documentiDisponibili ? (
               <ul className="documenti-list">

@@ -885,3 +885,27 @@
     animation: none;
   }
 }
+.hero-pdf-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-pdf-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #c1121f;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid #c1121f;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-pdf-download:hover {
+  background: #c1121f;
+  color: #ffffff;
+}
