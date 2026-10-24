@@ -3,18 +3,34 @@ import logoRally from "../assets/Rally Del Garda targa.png";
 import rallyCarImage from "../assets/rally-car.jpg";
 import elencoIscrittiPdf from "../assets/ELENCO_ISCRITTI_RALLY_COMPLETO.pdf";
 
-
-
 export function Hero() {
   return (
     <section className="hero">
       <div className="hero-overlay" />
 
-
-
       <div className="hero-grid">
         {/* Primo nella struttura per comparire in cima su telefono */}
         <div className="hero-alerts">
+          <div className="hero-top-buttons">
+            <a
+              href="https://webapp.sportity.com/event/Rallydelgarda2026_/62e25a1a-4d63-405d-a64d-360b60319da7"
+              className="hero-top-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ALBO DI GARA UFFICIALE
+            </a>
+
+            <a
+              href="https://www.cronocarservice.com/event/26-rally-del-garda/"
+              className="hero-top-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CLASSIFICHE
+            </a>
+          </div>
+
           <a
             href={elencoIscrittiPdf}
             className="hero-news-alert"
@@ -32,12 +48,8 @@ export function Hero() {
           </a>
         </div>
 
-
-
         <div className="hero-left-panel">
           <div className="hero-badge">26°</div>
-
-
 
           <div className="hero-logo-card">
             <div className="hero-logo-top">memorial Renato Pasquali</div>
@@ -47,8 +59,6 @@ export function Hero() {
               className="hero-logo-image"
             />
           </div>
-
-
 
           <div className="hero-date-card">
             <div className="hero-icon-circle" aria-hidden="true">
@@ -60,19 +70,13 @@ export function Hero() {
             </div>
           </div>
 
-
-
           <div className="hero-register-card">
             <span className="hero-register-label">ISCRIZIONI APERTE DAL:</span>
             <span className="hero-register-date">1/10/2026</span>
           </div>
 
-
-
           <div className="hero-program-card">
             <div className="hero-program-title">PROGRAMMA</div>
-
-
 
             <div className="hero-program-grid">
               <div className="hero-program-col">
@@ -92,8 +96,6 @@ export function Hero() {
                   Salò
                 </p>
               </div>
-
-
 
               <div className="hero-program-col">
                 <p>
@@ -116,8 +118,6 @@ export function Hero() {
           </div>
         </div>
 
-
-
         <div className="hero-right-panel">
           <div className="hero-top-copy">
             <p className="hero-kicker">DUE GIORNI DI SPETTACOLO</p>
@@ -127,8 +127,6 @@ export function Hero() {
             </h1>
           </div>
 
-
-
           <div className="hero-categories">
             <a
               href="/documenti?cat=moderne"
@@ -137,16 +135,12 @@ export function Hero() {
               RALLY NAZIONALE
             </a>
 
-
-
             <a
               href="/documenti?cat=storiche"
               className="hero-category hero-category-btn"
             >
               RALLY STORICO
             </a>
-
-
 
             <a
               href="/documenti?cat=regolarita-media50"
@@ -156,19 +150,6 @@ export function Hero() {
             </a>
           </div>
 
-
-
-          <a
-            href="https://www.cronocarservice.com/event/26-rally-del-garda/"
-            className="hero-category hero-category-btn hero-albo-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ALBO DI GARA UFFICIALE
-          </a>
-
-
-
           <div className="hero-car-stage">
             <img
               src={rallyCarImage}
@@ -177,48 +158,26 @@ export function Hero() {
             />
           </div>
 
-
-
           <div className="hero-values">
             <div className="hero-value">
               <span>SPORT</span>
               <small>Adrenalina e competizione</small>
             </div>
 
-
-
             <div className="hero-value">
               <span>PASSIONE</span>
               <small>La nostra forza da sempre</small>
             </div>
-
-
 
             <div className="hero-value">
               <span>TERRITORIO</span>
               <small>Valorizziamo il Lago di Garda</small>
             </div>
 
-
-
             <div className="hero-value">
               <span>EMOZIONE</span>
               <small>Un’esperienza unica</small>
             </div>
-          </div>
-
-
-
-          <div className="hero-actions">
-            <a href="/documenti" className="btn-primary">
-              Iscriviti ora
-            </a>
-
-
-
-            <a href="/documenti" className="btn-secondary">
-              Regolamento
-            </a>
           </div>
         </div>
       </div>
